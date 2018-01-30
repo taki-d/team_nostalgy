@@ -125,10 +125,10 @@
 <wire x1="20" y1="0" x2="20" y2="25" width="0" layer="20"/>
 <wire x1="20" y1="25" x2="0" y2="25" width="0" layer="20"/>
 <wire x1="0" y1="25" x2="0" y2="0" width="0" layer="20"/>
-<hole x="2" y="23" drill="3.2"/>
-<hole x="18" y="23" drill="3.2"/>
-<hole x="18" y="2" drill="3.2"/>
-<hole x="2" y="2" drill="3.2"/>
+<hole x="2.5" y="22.5" drill="3.2"/>
+<hole x="17.5" y="22.5" drill="3.2"/>
+<hole x="17.5" y="2.5" drill="3.2"/>
+<hole x="2.5" y="2.5" drill="3.2"/>
 </plain>
 <libraries>
 <library name="new">
