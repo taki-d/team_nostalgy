@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.0">
+<eagle version="8.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -257,7 +257,8 @@
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.254" drill="0">
+<class number="0" name="default" width="0.508" drill="0">
+<clearance class="0" value="0.254"/>
 </class>
 </classes>
 <parts>

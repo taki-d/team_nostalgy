@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.4.3">
+<eagle version="8.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -15111,7 +15111,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.254" drill="0">
+<class number="0" name="default" width="0.381" drill="0">
+<clearance class="0" value="0.127"/>
 </class>
 </classes>
 <parts>
@@ -16773,10 +16774,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="134.62" y1="-12.7" x2="139.7" y2="-12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="A" pin="1"/>
-<wire x1="134.62" y1="-15.24" x2="139.7" y2="-15.24" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U$4" gate="G$1" pin="P$5"/>
 <wire x1="284.48" y1="111.76" x2="284.48" y2="114.3" width="0.1524" layer="91"/>
 </segment>
@@ -17071,6 +17068,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <segment>
 <pinref part="U$22" gate="G$1" pin="P$3"/>
 <wire x1="342.9" y1="48.26" x2="342.9" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="A" pin="1"/>
+<wire x1="134.62" y1="-15.24" x2="139.7" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">

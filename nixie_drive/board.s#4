@@ -12999,23 +12999,23 @@ Based on the following sources:
 &lt;/ul&gt;&lt;br&gt;
 &lt;author&gt;Created by p.s.troost@student.tue.nl&lt;/author&gt;</description>
 <packages>
-<package name="IN-16">
-<wire x1="-5.08" y1="-0.1588" x2="5.08" y2="-0.1588" width="0.254" layer="21" curve="-181.790911"/>
-<circle x="0" y="0" radius="6.3994" width="0.254" layer="21"/>
-<pad name="A" x="0" y="-3.7546" drill="0.63"/>
-<pad name="1" x="1.7448" y="-3.3245" drill="0.63"/>
-<pad name="7" x="3.0899" y="-2.1328" drill="0.63"/>
-<pad name="3" x="3.7272" y="-0.4526" drill="0.63"/>
-<pad name="RHDP" x="3.5106" y="1.3314" drill="0.63"/>
-<pad name="4" x="2.4897" y="2.8103" drill="0.63"/>
-<pad name="5" x="0.8985" y="3.6454" drill="0.63"/>
-<pad name="6" x="-0.8985" y="3.6454" drill="0.63"/>
-<pad name="2" x="-2.4897" y="2.8103" drill="0.63"/>
-<pad name="LHDP" x="-3.5106" y="1.3314" drill="0.63"/>
-<pad name="8" x="-3.7272" y="-0.4526" drill="0.63"/>
-<pad name="9" x="-3.0899" y="-2.1328" drill="0.63"/>
-<pad name="0" x="-1.7448" y="-3.3245" drill="0.63"/>
-<text x="9.0488" y="-2.6988" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<package name="IN-14">
+<wire x1="-7.62" y1="-0.1588" x2="7.6201" y2="0" width="0.254" layer="21" curve="-180"/>
+<circle x="0" y="0" radius="8.8744" width="0.254" layer="21"/>
+<pad name="A" x="0" y="-6.1899" drill="0.84"/>
+<pad name="LHDP" x="2.8766" y="-5.4809" drill="0.84"/>
+<pad name="0" x="5.0942" y="-3.5163" drill="0.84"/>
+<pad name="9" x="6.1448" y="-0.7461" drill="0.84"/>
+<pad name="8" x="5.7877" y="2.195" drill="0.84"/>
+<pad name="7" x="4.1047" y="4.6332" drill="0.84"/>
+<pad name="6" x="1.4813" y="6.0101" drill="0.84"/>
+<pad name="5" x="-1.4813" y="6.0101" drill="0.84"/>
+<pad name="4" x="-4.1047" y="4.6332" drill="0.84"/>
+<pad name="3" x="-5.7877" y="2.195" drill="0.84"/>
+<pad name="2" x="-6.1448" y="-0.7461" drill="0.84"/>
+<pad name="1" x="-5.0942" y="-3.5163" drill="0.84"/>
+<pad name="RHDP" x="-2.8766" y="-5.4809" drill="0.84"/>
+<text x="11.2713" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 </package>
 <package name="IN-19">
 <wire x1="-5.715" y1="-0.1588" x2="5.715" y2="-0.1588" width="0.16" layer="21" curve="180"/>
@@ -13039,25 +13039,25 @@ Based on the following sources:
 </package>
 </packages>
 <symbols>
-<symbol name="IN-16">
-<wire x1="-5.08" y1="-10.795" x2="-5.08" y2="13.335" width="0.4064" layer="94"/>
-<wire x1="-5.08" y1="-10.795" x2="7.62" y2="-10.795" width="0.4064" layer="94" curve="180"/>
-<wire x1="7.62" y1="-10.795" x2="7.62" y2="13.335" width="0.4064" layer="94"/>
-<wire x1="-5.08" y1="13.335" x2="7.62" y2="13.335" width="0.4064" layer="94" curve="-180"/>
-<text x="-3.175" y="20.955" size="1.778" layer="95">&gt;NAME</text>
-<pin name="0" x="-7.62" y="-10.16" visible="pin" length="short"/>
-<pin name="9" x="-7.62" y="-7.62" visible="pin" length="short"/>
-<pin name="8" x="-7.62" y="-5.08" visible="pin" length="short"/>
-<pin name="7" x="-7.62" y="-2.54" visible="pin" length="short"/>
-<pin name="6" x="-7.62" y="0" visible="pin" length="short"/>
-<pin name="5" x="-7.62" y="2.54" visible="pin" length="short"/>
-<pin name="4" x="-7.62" y="5.08" visible="pin" length="short"/>
-<pin name="3" x="-7.62" y="7.62" visible="pin" length="short"/>
-<pin name="2" x="-7.62" y="10.16" visible="pin" length="short"/>
-<pin name="1" x="-7.62" y="12.7" visible="pin" length="short"/>
-<pin name="LHDP" x="10.16" y="12.7" visible="pin" length="short" rot="R180"/>
-<pin name="RHDP" x="10.16" y="-10.16" visible="pin" length="short" rot="R180"/>
-<pin name="A" x="10.16" y="0" visible="pin" length="short" rot="R180"/>
+<symbol name="IN-14">
+<wire x1="-5.08" y1="-13.335" x2="-5.08" y2="10.795" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="-13.335" x2="7.62" y2="-13.335" width="0.4064" layer="94" curve="180"/>
+<wire x1="7.62" y1="-13.335" x2="7.62" y2="10.795" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="10.795" x2="7.62" y2="10.795" width="0.4064" layer="94" curve="-180"/>
+<text x="-2.54" y="18.415" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="-7.62" y="10.16" visible="pin" length="short"/>
+<pin name="2" x="-7.62" y="7.62" visible="pin" length="short"/>
+<pin name="3" x="-7.62" y="5.08" visible="pin" length="short"/>
+<pin name="4" x="-7.62" y="2.54" visible="pin" length="short"/>
+<pin name="5" x="-7.62" y="0" visible="pin" length="short"/>
+<pin name="6" x="-7.62" y="-2.54" visible="pin" length="short"/>
+<pin name="7" x="-7.62" y="-5.08" visible="pin" length="short"/>
+<pin name="8" x="-7.62" y="-7.62" visible="pin" length="short"/>
+<pin name="9" x="-7.62" y="-10.16" visible="pin" length="short"/>
+<pin name="0" x="-7.62" y="-12.7" visible="pin" length="short"/>
+<pin name="RHDP" x="10.16" y="-12.7" visible="pin" length="short" rot="R180"/>
+<pin name="A" x="10.16" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="LHDP" x="10.16" y="10.16" visible="pin" length="short" rot="R180"/>
 </symbol>
 <symbol name="IN-19A">
 <wire x1="-5.08" y1="-5.715" x2="-5.08" y2="13.335" width="0.4064" layer="94"/>
@@ -13109,13 +13109,13 @@ Based on the following sources:
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="IN-16" prefix="N">
-<description>IN-16: small numeric&lt;b&gt; frontview&lt;/b&gt; nixie tube</description>
+<deviceset name="IN-14" prefix="N">
+<description>IN-14: medium numeric &lt;b&gt;frontview&lt;/b&gt; nixie tube</description>
 <gates>
-<gate name="G$1" symbol="IN-16" x="-2.54" y="0"/>
+<gate name="G$1" symbol="IN-14" x="0" y="2.54"/>
 </gates>
 <devices>
-<device name="" package="IN-16">
+<device name="" package="IN-14">
 <connects>
 <connect gate="G$1" pin="0" pad="0"/>
 <connect gate="G$1" pin="1" pad="1"/>
@@ -13250,14 +13250,14 @@ Based on the following sources:
 <part name="R28" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="M3216" package3d_urn="urn:adsk.eagle:package:26083/1"/>
 <part name="R29" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="M3216" package3d_urn="urn:adsk.eagle:package:26083/1"/>
 <part name="R30" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="M3216" package3d_urn="urn:adsk.eagle:package:26083/1"/>
-<part name="N1" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N2" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N3" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N4" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N5" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N6" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N7" library="russian-nixies" deviceset="IN-16" device=""/>
-<part name="N8" library="russian-nixies" deviceset="IN-16" device=""/>
+<part name="N1" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N2" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N3" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N4" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N5" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N6" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N7" library="russian-nixies" deviceset="IN-14" device=""/>
+<part name="N8" library="russian-nixies" deviceset="IN-14" device=""/>
 <part name="N9" library="russian-nixies" deviceset="IN-19A" device=""/>
 <part name="N10" library="russian-nixies" deviceset="IN-19B" device=""/>
 <part name="GND7" library="160713 Library by matsu" deviceset="GND" device=""/>
@@ -13333,14 +13333,14 @@ Based on the following sources:
 <instance part="R28" gate="G$1" x="182.88" y="-121.92"/>
 <instance part="R29" gate="G$1" x="236.22" y="-60.96"/>
 <instance part="R30" gate="G$1" x="236.22" y="-81.28"/>
-<instance part="N1" gate="G$1" x="312.42" y="83.82" rot="R90"/>
-<instance part="N2" gate="G$1" x="360.68" y="83.82" rot="R90"/>
-<instance part="N3" gate="G$1" x="408.94" y="83.82" rot="R90"/>
-<instance part="N4" gate="G$1" x="457.2" y="83.82" rot="R90"/>
-<instance part="N5" gate="G$1" x="312.42" y="33.02" rot="R90"/>
-<instance part="N6" gate="G$1" x="360.68" y="33.02" rot="R90"/>
-<instance part="N7" gate="G$1" x="408.94" y="33.02" rot="R90"/>
-<instance part="N8" gate="G$1" x="457.2" y="33.02" rot="R90"/>
+<instance part="N1" gate="G$1" x="309.88" y="83.82" rot="R90"/>
+<instance part="N2" gate="G$1" x="358.14" y="83.82" rot="R90"/>
+<instance part="N3" gate="G$1" x="406.4" y="83.82" rot="R90"/>
+<instance part="N4" gate="G$1" x="454.66" y="83.82" rot="R90"/>
+<instance part="N5" gate="G$1" x="309.88" y="33.02" rot="R90"/>
+<instance part="N6" gate="G$1" x="358.14" y="33.02" rot="R90"/>
+<instance part="N7" gate="G$1" x="406.4" y="33.02" rot="R90"/>
+<instance part="N8" gate="G$1" x="454.66" y="33.02" rot="R90"/>
 <instance part="N9" gate="G$1" x="314.96" y="-5.08" rot="R90"/>
 <instance part="N10" gate="G$1" x="363.22" y="-5.08" rot="R90"/>
 <instance part="GND7" gate="1" x="228.6" y="-116.84"/>

@@ -2,24 +2,24 @@ EAGLE AutoRouter Statistics:
 
 Job           : D:/Documents/team_nostalgy/nixie_drive/board.brd
 
-Start at      : 20:26:31 (2018/01/30)
-End at        : 20:27:16 (2018/01/30)
-Elapsed time  : 00:00:43
+Start at      : 17:33:20 (2018/02/01)
+End at        : 17:33:27 (2018/02/01)
+Elapsed time  : 00:00:04
 
-Signals       :    92   RoutingGrid: 8 mil  Layers: 2
-Connections   :   277   predefined:  267 ( 77 Vias )
+Signals       :    92   RoutingGrid: 25 mil  Layers: 2
+Connections   :   277   predefined:  0 ( 0 Vias )
 
-Router memory :   1597820
+Router memory :   172344
 
-Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4 Optimize5 Optimize6 Optimize7 Optimize8 Optimize9Optimize10Optimize11Optimize12
+Passname          :    Busses     Route Optimize1 Optimize2 Optimize3 Optimize4
 
-Time per pass     :  00:00:41  00:00:00  00:00:00  00:00:00  00:00:00  00:00:01  00:00:00  00:00:00  00:00:00  00:00:00  00:00:01  00:00:00  00:00:00  00:00:00
-Number of Ripups  :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
-max. Level        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
-max. Total        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
+Time per pass     :  00:00:00  00:00:01  00:00:01  00:00:00  00:00:01  00:00:01
+Number of Ripups  :         0         1         0         0         0         0
+max. Level        :         0         1         0         0         0         0
+max. Total        :         0         3         0         0         0         0
 
-Routed            :         2        10        10        10        10        10        10        10        10        10        10        10        10        10
-Vias              :         0         4         4         4         4         4         4         4         4         4         4         4         4         4
-Resolution        :    97.1 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
+Routed            :        64       262       262       262       262       262
+Vias              :         0       331       174       134       123       119
+Resolution        :    23.1 %    94.6 %    94.6 %    94.6 %    94.6 %    94.6 %
 
-Final             : 100.0% finished
+Final             : 94.6% finished

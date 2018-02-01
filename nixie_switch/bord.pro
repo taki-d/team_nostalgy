@@ -2,14 +2,14 @@ EAGLE AutoRouter Statistics:
 
 Job           : D:/Documents/team_nostalgy/nixie_switch/bord.brd
 
-Start at      : 21:37:21 (2018/01/29)
-End at        : 21:37:22 (2018/01/29)
+Start at      : 16:46:17 (2018/02/01)
+End at        : 16:46:18 (2018/02/01)
 Elapsed time  : 00:00:00
 
-Signals       :     2   RoutingGrid: 8 mil  Layers: 1
+Signals       :     2   RoutingGrid: 15 mil  Layers: 1
 Connections   :     4   predefined:  0 ( 0 Vias )
 
-Router memory :   71816
+Router memory :   19760
 
 Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4
 
