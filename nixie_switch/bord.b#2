@@ -380,8 +380,12 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="SW1" library="new" package="TVGP01-G73BB" value="TVGP01-G73BB" x="10" y="15" rot="R90"/>
-<element name="U$1" library="180118 Library by matsu" package="PIN_HEADER_MALE_1X02_02P" value="PIN_HEADER_MALE_1X02_02P" x="10" y="2"/>
+<element name="SW1" library="new" package="TVGP01-G73BB" value="TVGP01-G73BB" x="10" y="15" smashed="yes" rot="R90">
+<attribute name="NAME" x="3" y="12" size="1.27" layer="25" ratio="10" rot="R90"/>
+</element>
+<element name="U$1" library="180118 Library by matsu" package="PIN_HEADER_MALE_1X02_02P" value="PIN_HEADER_MALE_1X02_02P" x="10" y="2" smashed="yes">
+<attribute name="NAME" x="7.46" y="3.651" size="1.27" layer="25" ratio="10"/>
+</element>
 </elements>
 <signals>
 <signal name="N$1">
