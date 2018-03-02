@@ -144,18 +144,16 @@ volatile int timer_count = 0;
 void flash(){
   timer_count++;
   switch(timer_count){
-    case 2:
+    case 4:
       display();
       break;
-    case 5:
+    case 11:
       end_display();
       break;
-    case 13:
+    case 26:
       timer_count = 0;
       break;
-  }
-
-  
+  } 
 }
 
 SerialCommand SCmd;
@@ -235,13 +233,9 @@ void setup(){
   
   Serial.begin(9600);
 
-
   Serial.println("Ready");
-  Serial.println(SERIALCOMMANDBUFFER);
-
-//  FlexiTimer2::set(200, 1.0 / 1000000, flash);
-//  FlexiTimer2::start();
-  Timer1.initialize(200);
+  
+  Timer1.initialize(100);
   Timer1.attachInterrupt(flash);
 }
 
