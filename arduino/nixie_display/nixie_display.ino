@@ -150,7 +150,7 @@ void flash(){
     case 5:
       end_display();
       break;
-    case 10:
+    case 13:
       timer_count = 0;
       break;
   }
@@ -174,7 +174,7 @@ void error(){
   Serial.println("ubnrecongized command");
 }
 
-void set_last_4_number(){
+void set_num(){
   char* arg = SCmd.next();
 
   nixie_num[0] = calc_num(arg[0]);
@@ -187,13 +187,39 @@ void set_last_4_number(){
   nixie_num[7] = calc_num(arg[7]);
 }
 
-void set_first_4_number(){
-  
+void set_dot(){
+  char* arg = SCmd.next();
+  int dot = 0;
+
+  for(int i = 0; i < 8; ++i){
+    dot = calc_num(arg[i]);
+    
+    switch(dot){
+      case 0:
+        right_dot[i] = 0;
+        left_dot[i] = 0;
+        break;
+      case 1:
+        right_dot[i] = 0;
+        left_dot[i] = 1;
+        break;
+      case 2:
+        right_dot[i] = 1;
+        left_dot[i] = 0;
+        break;
+      case 3:
+        right_dot[i] = 1;
+        left_dot[i] = 1;
+        break;
+    }
+  }
 }
 
+
 void setup(){
-  SCmd.addCommand("",echo_back_args);
-  SCmd.addCommand("setnum",set_last_4_number);
+  SCmd.addCommand("echo",echo_back_args);
+  SCmd.addCommand("setnum",set_num);
+  SCmd.addCommand("setdot",set_dot);
   SCmd.addDefaultHandler(error);
   
   pinMode(4,OUTPUT);
