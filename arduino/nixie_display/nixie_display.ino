@@ -1,5 +1,8 @@
+#define SERIALCOMMANDBUFFER 32
 #include <SerialCommand.h>
 #include <TimerOne.h>
+
+
 
 volatile int nixie_num[8] = {
   2,
@@ -171,13 +174,26 @@ void error(){
   Serial.println("ubnrecongized command");
 }
 
-void set_number(){
+void set_last_4_number(){
+  char* arg = SCmd.next();
+
+  nixie_num[0] = calc_num(arg[0]);
+  nixie_num[1] = calc_num(arg[1]);
+  nixie_num[2] = calc_num(arg[2]);
+  nixie_num[3] = calc_num(arg[3]);
+  nixie_num[4] = calc_num(arg[4]);
+  nixie_num[5] = calc_num(arg[5]);
+  nixie_num[6] = calc_num(arg[6]);
+  nixie_num[7] = calc_num(arg[7]);
+}
+
+void set_first_4_number(){
   
 }
 
-
 void setup(){
-  SCmd.addCommand("sayhello",echo_back_args);
+  SCmd.addCommand("",echo_back_args);
+  SCmd.addCommand("setnum",set_last_4_number);
   SCmd.addDefaultHandler(error);
   
   pinMode(4,OUTPUT);
@@ -195,6 +211,7 @@ void setup(){
 
 
   Serial.println("Ready");
+  Serial.println(SERIALCOMMANDBUFFER);
 
 //  FlexiTimer2::set(200, 1.0 / 1000000, flash);
 //  FlexiTimer2::start();
