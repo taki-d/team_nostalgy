@@ -1,11 +1,12 @@
-#include <FlexiTimer2.h>
+#include <TimerOne.h>
+//#include <FlexiTimer2.h>
 
 volatile int nixie_num[8] = {
   2,
   10,
   7,
   1,
-  8,
+  7,
   2,
   8,
   1
@@ -106,11 +107,17 @@ int calc_num(char d){
     }
 }
 
-int count = 0;
+int nixie_index = 0;
 
-void flash(){
-  for(int nixie_index = 0; nixie_index < 8; ++nixie_index){
+void display(){
+//  for(int nixie_index = 0; nixie_index < 8; ++nixie_index){
+    ++nixie_index;
 
+//    Serial.print(nixie_index);
+
+    if(nixie_index == 8){
+      nixie_index = 0;
+    }
   
     digitalWrite(6,pattern_t[nixie_index][3]);
     digitalWrite(7,pattern_t[nixie_index][2]);
@@ -125,13 +132,34 @@ void flash(){
     digitalWrite(5,!left_dot[nixie_index]);
     digitalWrite(4,!right_dot[nixie_index]);
 
-    delayMicroseconds(400);
+}
+
+void end_display(){
 
     digitalWrite(9,1);
     digitalWrite(5,1);
     digitalWrite(4,1);
-    delayMicroseconds(1000);
+//  }
+}
+
+volatile int timer_count = 0;
+int count = 0;
+
+void flash(){
+  timer_count++;
+  switch(timer_count){
+    case 2:
+      display();
+      break;
+    case 5:
+      end_display();
+      break;
+    case 10:
+      timer_count = 0;
+      break;
   }
+
+  
 }
 
 void setup(){
@@ -146,21 +174,30 @@ void setup(){
   pinMode(12,OUTPUT);
   pinMode(13,OUTPUT);
 
-  FlexiTimer2::set(10,flash);
-  FlexiTimer2::start();
+//  FlexiTimer2::set(200, 1.0 / 1000000, flash);
+//  FlexiTimer2::start();
+  Timer1.initialize(200);
+  Timer1.attachInterrupt(flash);
 
   Serial.begin(9600);
 }
 
 void loop(){
   int kazu = 0;
+  int index = 0;
+  int num = 0;
+  int dot = 0;
   
-  if(Serial.available())
-    kazu = calc_num(Serial.read());
-    for(int cc = 0; cc < kazu; ++cc){
-      int index = calc_num(Serial.read());
-      int num = calc_num(Serial.read());
-      int dot = calc_num(Serial.read());
+  if(Serial.available() > 0)
+    
+//    kazu = calc_num(Serial.read());
+
+//    Serial.println(kazu);
+    
+//    for(int cc = 0; cc < kazu; ++cc){
+      index = calc_num(Serial.read());
+      num = calc_num(Serial.read());
+      dot = calc_num(Serial.read());
 
       nixie_num[index] = num;
 
@@ -182,9 +219,9 @@ void loop(){
           left_dot[index] = 1;
           break;
       }
-    }
+//    }
   
-  ++count;
+//  ++count;
 /*
   if(count < 25){
    nixie_num[0] = 1;
@@ -206,7 +243,7 @@ void loop(){
   nixie_num[6] = random(0,10);
   nixie_num[7] = random(0,10);
   */
-  delay(50);
+//  delay(50);
 
 }
 
