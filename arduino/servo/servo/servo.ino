@@ -4,8 +4,6 @@ Servo servo;
 
 int val=1500;
 void setup(){
-  //パルス出力ピンの設定
-  //（デジタル出力なのでどのピンでも可）
   servo.attach(3,1000,2000);
   Serial.begin(9600);
 }
@@ -17,6 +15,7 @@ void loop(){
     Serial.println(val);
   }
 
+  //0°:1500, 120°:1200, 240°:1850
   servo.writeMicroseconds(val);
 
 }
