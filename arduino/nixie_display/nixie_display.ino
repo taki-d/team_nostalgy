@@ -1,14 +1,14 @@
 #include <FlexiTimer2.h>
 
 volatile int nixie_num[8] = {
-  3,
+  2,
   10,
+  7,
   1,
-  4,
-  1,
-  5,
-  9,
-  2
+  8,
+  2,
+  8,
+  1
 };
 
 volatile bool right_dot[8] = {
