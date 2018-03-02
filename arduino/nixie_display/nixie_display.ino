@@ -1,12 +1,12 @@
+#include <SerialCommand.h>
 #include <TimerOne.h>
-//#include <FlexiTimer2.h>
 
 volatile int nixie_num[8] = {
   2,
   10,
   7,
   1,
-  7,
+  8,
   2,
   8,
   1
@@ -110,10 +110,7 @@ int calc_num(char d){
 int nixie_index = 0;
 
 void display(){
-//  for(int nixie_index = 0; nixie_index < 8; ++nixie_index){
     ++nixie_index;
-
-//    Serial.print(nixie_index);
 
     if(nixie_index == 8){
       nixie_index = 0;
@@ -131,19 +128,15 @@ void display(){
 
     digitalWrite(5,!left_dot[nixie_index]);
     digitalWrite(4,!right_dot[nixie_index]);
-
 }
 
 void end_display(){
-
     digitalWrite(9,1);
     digitalWrite(5,1);
     digitalWrite(4,1);
-//  }
 }
 
 volatile int timer_count = 0;
-int count = 0;
 
 void flash(){
   timer_count++;
@@ -162,7 +155,31 @@ void flash(){
   
 }
 
+SerialCommand SCmd;
+
+void echo_back_args(){
+  char* arg = SCmd.next();
+  Serial.println("command test");
+  Serial.print("input:");
+  Serial.print(arg);
+
+  arg = SCmd.next();
+  Serial.println(arg);
+}
+
+void error(){
+  Serial.println("ubnrecongized command");
+}
+
+void set_number(){
+  
+}
+
+
 void setup(){
+  SCmd.addCommand("sayhello",echo_back_args);
+  SCmd.addDefaultHandler(error);
+  
   pinMode(4,OUTPUT);
   pinMode(5,OUTPUT);
   pinMode(6,OUTPUT);
@@ -173,78 +190,20 @@ void setup(){
   pinMode(11,OUTPUT);
   pinMode(12,OUTPUT);
   pinMode(13,OUTPUT);
+  
+  Serial.begin(9600);
+
+
+  Serial.println("Ready");
 
 //  FlexiTimer2::set(200, 1.0 / 1000000, flash);
 //  FlexiTimer2::start();
   Timer1.initialize(200);
   Timer1.attachInterrupt(flash);
-
-  Serial.begin(9600);
 }
 
 void loop(){
-  int kazu = 0;
-  int index = 0;
-  int num = 0;
-  int dot = 0;
-  
-  if(Serial.available() > 0)
-    
-//    kazu = calc_num(Serial.read());
-
-//    Serial.println(kazu);
-    
-//    for(int cc = 0; cc < kazu; ++cc){
-      index = calc_num(Serial.read());
-      num = calc_num(Serial.read());
-      dot = calc_num(Serial.read());
-
-      nixie_num[index] = num;
-
-      switch(dot){
-        case 0:
-          right_dot[index] = 0;
-          left_dot[index] = 0;
-          break;
-        case 1:
-          right_dot[index] = 0;
-          left_dot[index] = 1;
-          break;
-        case 2:
-          right_dot[index] = 1;
-          left_dot[index] = 0;
-          break;
-        case 3:
-          right_dot[index] = 1;
-          left_dot[index] = 1;
-          break;
-      }
-//    }
-  
-//  ++count;
-/*
-  if(count < 25){
-   nixie_num[0] = 1;
-  }else{
-   nixie_num[0] = 0;
-
-   if(count == 50){
-    count = 0;
-   }
-  }
-  */
-
-  /*
-  nixie_num[1] = 10;
-  nixie_num[2] = random(0,10);
-  nixie_num[3] = random(0,10);
-  nixie_num[4] = random(0,10);
-  nixie_num[5] = random(0,10);
-  nixie_num[6] = random(0,10);
-  nixie_num[7] = random(0,10);
-  */
-//  delay(50);
-
+  SCmd.readSerial();
 }
 
 
