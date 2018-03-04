@@ -1,4 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>Hello World</h1>
+    <script src="https://rawgit.com/nkapliev/nixie/master/nixie.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/nkapliev/nixie/master/nixie.css">
+
+    <div id="nixie-display">12345678</div>
+    <style>
+        #nixie-display{
+            font-size: 120px;
+            line-height: 120px;
+
+            letter-spacing: 0.2em;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#nixie-display').nixie();
+        })
+    </script>
 {% endblock %}
