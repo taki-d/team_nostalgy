@@ -8,7 +8,7 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/api/')
+@app.route('/api')
 def api():
     return 'this is nixie control api'
 
