@@ -1,8 +1,9 @@
+#include <Adafruit_NeoPixel.h>
 #define SERIALCOMMANDBUFFER 32
 #include <SerialCommand.h>
 #include <TimerOne.h>
 
-
+//#define WS2812B_MODE
 
 volatile int nixie_num[8] = {
   2,
@@ -62,6 +63,19 @@ volatile int pattern[11][4] = {
   {1,1,1,1}  // x
 };
 
+#ifdef WS2812B_MODE
+volatile int led_color[8] = {
+  20,
+  20,
+  20,
+  20,
+  20,
+  20,
+  20,
+  20
+};
+#endif
+
 int calc_num(char d){
       switch(d){
       case 'a':
@@ -110,6 +124,29 @@ int calc_num(char d){
     }
 }
 
+Adafruit_NeoPixel ledtape = Adafruit_NeoPixel(8,3,NEO_RGB + NEO_KHZ800);
+
+uint32_t rotateColor(byte WheelPos) {
+  if(WheelPos < 85) {
+   return ledtape.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
+  } else if(WheelPos < 170) {
+   WheelPos -= 85;
+   return ledtape.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+  } else {
+   WheelPos -= 170;
+   return ledtape.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+  }
+}
+
+void call(){
+ uint16_t i, j;
+ 
+ for(j=0; j <256; j++) {
+
+ }
+}
+
+
 int nixie_index = 0;
 
 void display(){
@@ -144,13 +181,16 @@ volatile int timer_count = 0;
 void flash(){
   timer_count++;
   switch(timer_count){
-    case 4:
+    case 5:
       display();
+#ifdef WS2812B_MODE
+      led_loop();
+#endif
       break;
     case 11:
       end_display();
       break;
-    case 26:
+    case 24:
       timer_count = 0;
       break;
   } 
@@ -213,11 +253,41 @@ void set_dot(){
   }
 }
 
+#ifdef WS2812B_MODE
+void set_led_color(){
+  char* arg = SCmd.next();
+  int led_index = atoi(arg);
+
+  arg = SCmd.next();
+  int led_color_code = atoi(arg);
+
+  led_color[led_index] = led_color_code;
+}
+#endif
+
+#ifdef WS2812B_MODE
+//int led_color = 0;
+void led_loop(){
+  int i;
+  for(i=0; i < ledtape.numPixels(); i++) {
+    ledtape.setPixelColor(i, rotateColor(led_color[i]));
+  }
+  ledtape.show();
+}
+#endif
 
 void setup(){
+#ifdef WS2812B_MODE
+  ledtape.begin();
+  ledtape.setBrightness(40);
+  ledtape.show();
+  SCmd.addCommand("setled",set_led_color);
+#endif
+  
   SCmd.addCommand("echo",echo_back_args);
   SCmd.addCommand("setnum",set_num);
   SCmd.addCommand("setdot",set_dot);
+
   SCmd.addDefaultHandler(error);
   
   pinMode(4,OUTPUT);
