@@ -2,6 +2,7 @@
 #define SERIALCOMMANDBUFFER 32
 #include <SerialCommand.h>
 #include <TimerOne.h>
+#include <Servo.h>
 
 //#define WS2812B_MODE
 
@@ -124,7 +125,9 @@ int calc_num(char d){
     }
 }
 
+#ifdef WS2812B_MODE
 Adafruit_NeoPixel ledtape = Adafruit_NeoPixel(8,3,NEO_RGB + NEO_KHZ800);
+
 
 uint32_t rotateColor(byte WheelPos) {
   if(WheelPos < 85) {
@@ -137,14 +140,7 @@ uint32_t rotateColor(byte WheelPos) {
    return ledtape.Color(0, WheelPos * 3, 255 - WheelPos * 3);
   }
 }
-
-void call(){
- uint16_t i, j;
- 
- for(j=0; j <256; j++) {
-
- }
-}
+#endif
 
 
 int nixie_index = 0;
@@ -276,6 +272,15 @@ void led_loop(){
 }
 #endif
 
+Servo servo;
+
+void set_servo_angle(){
+  char* arg = SCmd.next();
+  int val = atoi(arg);
+  servo.writeMicroseconds(val);
+  Serial.println(val);
+}
+
 void setup(){
 #ifdef WS2812B_MODE
   ledtape.begin();
@@ -283,10 +288,12 @@ void setup(){
   ledtape.show();
   SCmd.addCommand("setled",set_led_color);
 #endif
+  servo.attach(3,1000,2000);
   
   SCmd.addCommand("echo",echo_back_args);
   SCmd.addCommand("setnum",set_num);
   SCmd.addCommand("setdot",set_dot);
+  SCmd.addCommand("setservo",set_servo_angle);
 
   SCmd.addDefaultHandler(error);
   
