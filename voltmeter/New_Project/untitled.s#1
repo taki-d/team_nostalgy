@@ -7113,9 +7113,6 @@ Source: http://cache.national.com/ds/LM/LM158.pdf</description>
 <part name="GND6" library="180118 Library by matsu" deviceset="GND" device=""/>
 <part name="GND7" library="180118 Library by matsu" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
-<part name="5V1" library="180118 Library by matsu" deviceset="DC_JACK_2DC0005D100" device=""/>
-<part name="U$9" library="180118 Library by matsu" deviceset="PIN_HEADER_MALE_1X02_02P" device=""/>
-<part name="GND8" library="180118 Library by matsu" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7153,9 +7150,6 @@ Source: http://cache.national.com/ds/LM/LM158.pdf</description>
 <instance part="IC1" gate="P" x="187.96" y="48.26"/>
 <instance part="GND7" gate="1" x="187.96" y="35.56"/>
 <instance part="P+5" gate="VCC" x="187.96" y="60.96"/>
-<instance part="5V1" gate="G$1" x="-5.08" y="99.06"/>
-<instance part="U$9" gate="G$1" x="15.494" y="100.33" rot="R90"/>
-<instance part="GND8" gate="1" x="5.08" y="88.9"/>
 </instances>
 <busses>
 </busses>
@@ -7474,19 +7468,6 @@ Source: http://cache.national.com/ds/LM/LM158.pdf</description>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="187.96" y1="40.64" x2="187.96" y2="38.1" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="5V1" gate="G$1" pin="3"/>
-<pinref part="U$9" gate="G$1" pin="1"/>
-<wire x1="0" y1="99.06" x2="5.08" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="5V1" gate="G$1" pin="2"/>
-<wire x1="5.08" y1="99.06" x2="10.414" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="0" y1="96.52" x2="5.08" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="96.52" x2="5.08" y2="99.06" width="0.1524" layer="91"/>
-<junction x="5.08" y="99.06"/>
-<pinref part="GND8" gate="1" pin="GND"/>
-<wire x1="5.08" y1="96.52" x2="5.08" y2="91.44" width="0.1524" layer="91"/>
-<junction x="5.08" y="96.52"/>
-</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -7579,13 +7560,6 @@ Source: http://cache.national.com/ds/LM/LM158.pdf</description>
 <wire x1="215.9" y1="50.8" x2="223.52" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="215.9" y1="48.26" x2="215.9" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$35" class="0">
-<segment>
-<pinref part="5V1" gate="G$1" pin="1"/>
-<pinref part="U$9" gate="G$1" pin="2"/>
-<wire x1="0" y1="101.6" x2="10.414" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
