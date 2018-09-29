@@ -7,6 +7,8 @@ import time
 import wiringpi as wp
 import RPi.GPIO as GPIO
 import enum
+import json
+import fasteners
 
 
 class TransData:
@@ -150,7 +152,7 @@ def time_now():
     return [sending_data, dot]
 
 
-mode = 3
+mode = 1
 '''
 1:Clock Mode
 2:Voltage Mode
@@ -292,7 +294,7 @@ get_temperature()
 get_pressure()
 get_humidity()
 
-move_servo(2)
+move_servo(1)
 
 print("testtest")
 print("test")
@@ -309,11 +311,40 @@ while True:
     6:Divergence Mode
     7:WebMode
     '''
+
+    BASE_DIR = os.path.dirname(__file__)
+    lock = fasteners.InterProcessLock("/var/tmp/lock")
+
+    while not lock.acquire():
+        print("locking")
+
+    f = open('/home/pi/team_nostalgy/web/static/api.json', 'r')
+    json_data = json.load(f)
+    f.close()
+    print(json_data)
+
+    lock.release()
+
+    num = [0, 0, 0, 0, 0, 0, 0, 0]
+    dot = [0, 0, 0, 0, 0, 0, 0, 0]
+
+    if 'mode' in json_data.keys():
+        mode = json_data['mode']
+
+    if 'num' in json_data.keys():
+        num = json_data['num']
+
+    if 'dot' in json_data.keys():
+        dot = json_data['dot']
+
     if mode == 1:
+        move_servo(0)
         data = time_now()
     elif mode == 2:
+        move_servo(1)
         data = get_voltage()
     elif mode == 3:
+        move_servo(2)
         data = get_temperature()
     elif mode == 4:
         data = get_humidity()
@@ -322,7 +353,7 @@ while True:
     elif mode == 6:
         data = get_divergence_value()
     elif mode == 7:
-        data = get_web()
+        data = [num, dot]
 
     td.set_number(data[0])
     td.set_dot(data[1])

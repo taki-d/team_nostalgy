@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.5.2">
+<eagle version="9.1.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -231,160 +231,6 @@ Based on the following sources:
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="LHDP" pad="LHDP"/>
 <connect gate="G$1" pin="RHDP" pad="RHDP"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="adafruit" urn="urn:adsk.eagle:library:420">
-<packages>
-<package name="WS2812B" library_version="1">
-<wire x1="2.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="1.6" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="1.6" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="2.5" x2="-1.6" y2="2.5" width="0.127" layer="21"/>
-<wire x1="-1.6" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="1.6" x2="-1.6" y2="2.5" width="0.127" layer="21"/>
-<smd name="1-VDD" x="2.45" y="-1.65" dx="1.5" dy="0.9" layer="1" rot="R180"/>
-<smd name="2-DOUT" x="2.45" y="1.65" dx="1.5" dy="0.9" layer="1" rot="R180"/>
-<smd name="4-DIN" x="-2.45" y="-1.65" dx="1.5" dy="0.9" layer="1" rot="R180"/>
-<smd name="3-GND" x="-2.45" y="1.65" dx="1.5" dy="0.9" layer="1" rot="R180"/>
-<circle x="0" y="0" radius="1.7204625" width="0.127" layer="21"/>
-<text x="3.4925" y="1.5875" size="0.8128" layer="25" ratio="10" rot="R270">&gt;NAME</text>
-<wire x1="-1.6" y1="2.5" x2="-1.3" y2="2.8" width="0.127" layer="21"/>
-<wire x1="-1.3" y1="2.8" x2="-1.7" y2="3.2" width="0.127" layer="21"/>
-<wire x1="-1.7" y1="3.2" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
-</package>
-<package name="WS2812B-NARROW" library_version="1">
-<wire x1="2.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="1.6" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="1.6" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="2.5" x2="-1.6" y2="2.5" width="0.127" layer="21"/>
-<wire x1="-1.6" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="1.6" x2="-1.6" y2="2.5" width="0.127" layer="21"/>
-<smd name="1-VDD" x="2.35" y="-1.65" dx="1.3" dy="1.2" layer="1" rot="R180"/>
-<smd name="2-DOUT" x="2.35" y="1.65" dx="1.3" dy="1.2" layer="1" rot="R180"/>
-<smd name="4-DIN" x="-2.35" y="-1.65" dx="1.3" dy="1.2" layer="1" rot="R180"/>
-<smd name="3-GND" x="-2.35" y="1.65" dx="1.3" dy="1.2" layer="1" rot="R180"/>
-<circle x="0" y="0" radius="1.7204625" width="0.127" layer="21"/>
-<text x="3.4925" y="1.5875" size="0.8128" layer="25" ratio="10" rot="R270">&gt;NAME</text>
-<wire x1="-1.6" y1="2.5" x2="-1.25" y2="2.85" width="0.127" layer="21"/>
-<wire x1="-1.25" y1="2.85" x2="-1.7" y2="3.3" width="0.127" layer="21"/>
-<wire x1="-1.7" y1="3.3" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
-</package>
-<package name="LED3535" library_version="1">
-<smd name="1" x="-1.75" y="0.875" dx="0.85" dy="1" layer="1" rot="R90"/>
-<smd name="4" x="1.75" y="0.875" dx="0.85" dy="1" layer="1" rot="R90"/>
-<smd name="2" x="-1.75" y="-0.875" dx="0.85" dy="1" layer="1" rot="R90"/>
-<smd name="3" x="1.75" y="-0.875" dx="0.85" dy="1" layer="1" rot="R90"/>
-<wire x1="-1.75" y1="1.75" x2="1.75" y2="1.75" width="0.127" layer="51"/>
-<wire x1="1.75" y1="1.75" x2="1.75" y2="-1.75" width="0.127" layer="51"/>
-<wire x1="1.75" y1="-1.75" x2="-1.75" y2="-1.75" width="0.127" layer="51"/>
-<wire x1="-1.75" y1="-1.75" x2="-1.75" y2="1.75" width="0.127" layer="51"/>
-<circle x="0" y="0" radius="1.4" width="0.127" layer="51"/>
-<wire x1="-1.9" y1="1.6" x2="-1.9" y2="1.9" width="0.127" layer="21"/>
-<wire x1="-1.9" y1="1.9" x2="1.9" y2="1.9" width="0.127" layer="21"/>
-<wire x1="1.9" y1="1.9" x2="1.9" y2="1.6" width="0.127" layer="21"/>
-<wire x1="-1.9" y1="-1.6" x2="-1.9" y2="-1.9" width="0.127" layer="21"/>
-<wire x1="-1.9" y1="-1.9" x2="1.9" y2="-1.9" width="0.127" layer="21"/>
-<wire x1="1.9" y1="-1.9" x2="1.9" y2="-1.6" width="0.127" layer="21"/>
-<text x="-1.905" y="2.159" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
-<text x="-1.778" y="-2.54" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
-<polygon width="0.127" layer="21">
-<vertex x="-1.905" y="1.905"/>
-<vertex x="-1.905" y="1.524"/>
-<vertex x="-1.524" y="1.524"/>
-<vertex x="-1.143" y="1.905"/>
-</polygon>
-</package>
-</packages>
-<symbols>
-<symbol name="WS2812BLED" library_version="1">
-<pin name="VDD" x="5.08" y="15.24" visible="pin" length="middle" direction="pwr" rot="R270"/>
-<pin name="DI" x="-12.7" y="-2.54" visible="pin" length="middle" direction="in"/>
-<pin name="GND" x="0" y="-10.16" visible="pin" length="middle" direction="pwr" rot="R90"/>
-<pin name="DO" x="12.7" y="-2.54" visible="pin" length="middle" direction="out" rot="R180"/>
-<wire x1="-7.62" y1="10.16" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-2.54" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-5.08" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-2.54" x2="7.62" y2="10.16" width="0.254" layer="94"/>
-<wire x1="7.62" y1="10.16" x2="5.08" y2="10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
-<wire x1="-6.35" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="2.54" x2="-6.35" y2="5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="3.81" y2="5.08" width="0.254" layer="94"/>
-<wire x1="3.81" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-6.35" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="3.81" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="2.54" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="7.62" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="5.08" x2="-1.27" y2="7.62" width="0.254" layer="94"/>
-<wire x1="2.54" y1="5.08" x2="2.54" y2="7.62" width="0.254" layer="94"/>
-<wire x1="2.54" y1="7.62" x2="-1.27" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="5.08" x2="-3.81" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="2.54" x2="-3.81" y2="5.08" width="0.254" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="2.54" y2="2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="2.54" x2="-5.08" y2="1.27" width="0.254" layer="94"/>
-<wire x1="2.54" y1="1.27" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-5.08" y2="1.27" width="0.254" layer="94"/>
-<wire x1="0" y1="-4.064" x2="0" y2="-5.08" width="0.254" layer="94"/>
-<text x="-4.064" y="8.382" size="1.27" layer="94">WS2812B</text>
-<wire x1="-3.81" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="2.54" x2="-1.27" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="2.54" x2="0" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="2.54" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="-1.27" y2="2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="2.54" y2="1.27" width="0.254" layer="94"/>
-<wire x1="5.08" y1="10.16" x2="5.08" y2="7.62" width="0.254" layer="94"/>
-<wire x1="2.54" y1="7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="WS2812B" prefix="LED" library_version="1">
-<gates>
-<gate name="G$1" symbol="WS2812BLED" x="0" y="-2.54"/>
-</gates>
-<devices>
-<device name="5050" package="WS2812B">
-<connects>
-<connect gate="G$1" pin="DI" pad="4-DIN"/>
-<connect gate="G$1" pin="DO" pad="2-DOUT"/>
-<connect gate="G$1" pin="GND" pad="3-GND"/>
-<connect gate="G$1" pin="VDD" pad="1-VDD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="_5050N" package="WS2812B-NARROW">
-<connects>
-<connect gate="G$1" pin="DI" pad="4-DIN"/>
-<connect gate="G$1" pin="DO" pad="2-DOUT"/>
-<connect gate="G$1" pin="GND" pad="3-GND"/>
-<connect gate="G$1" pin="VDD" pad="1-VDD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="3535" package="LED3535">
-<connects>
-<connect gate="G$1" pin="DI" pad="1"/>
-<connect gate="G$1" pin="DO" pad="3"/>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="VDD" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -716,14 +562,6 @@ Based on the following sources:
 <part name="N6" library="russian-nixies" deviceset="IN-14" device=""/>
 <part name="N7" library="russian-nixies" deviceset="IN-14" device=""/>
 <part name="N8" library="russian-nixies" deviceset="IN-14" device=""/>
-<part name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED3" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED4" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED5" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED6" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED7" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
-<part name="LED8" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="WS2812B" device="_5050N"/>
 <part name="P+1" library="160713 Library by matsu" deviceset="+5V" device=""/>
 <part name="P+2" library="160713 Library by matsu" deviceset="+5V" device=""/>
 <part name="P+3" library="160713 Library by matsu" deviceset="+5V" device=""/>
@@ -758,14 +596,6 @@ Based on the following sources:
 <instance part="N6" gate="G$1" x="358.14" y="33.02" rot="R90"/>
 <instance part="N7" gate="G$1" x="406.4" y="33.02" rot="R90"/>
 <instance part="N8" gate="G$1" x="454.66" y="33.02" rot="R90"/>
-<instance part="LED1" gate="G$1" x="297.18" y="-22.86"/>
-<instance part="LED2" gate="G$1" x="322.58" y="-22.86"/>
-<instance part="LED3" gate="G$1" x="347.98" y="-22.86"/>
-<instance part="LED4" gate="G$1" x="373.38" y="-22.86"/>
-<instance part="LED5" gate="G$1" x="398.78" y="-22.86"/>
-<instance part="LED6" gate="G$1" x="424.18" y="-22.86"/>
-<instance part="LED7" gate="G$1" x="449.58" y="-22.86"/>
-<instance part="LED8" gate="G$1" x="474.98" y="-22.86"/>
 <instance part="P+1" gate="1" x="302.26" y="-5.08"/>
 <instance part="P+2" gate="1" x="327.66" y="-5.08"/>
 <instance part="P+3" gate="1" x="353.06" y="-5.08"/>
@@ -1367,81 +1197,7 @@ Based on the following sources:
 <wire x1="231.14" y1="91.44" x2="231.14" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="LED1" gate="G$1" pin="DO"/>
-<pinref part="LED2" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="LED2" gate="G$1" pin="DO"/>
-<pinref part="LED3" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="LED3" gate="G$1" pin="DO"/>
-<pinref part="LED4" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="LED4" gate="G$1" pin="DO"/>
-<pinref part="LED5" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="LED5" gate="G$1" pin="DO"/>
-<pinref part="LED6" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="LED6" gate="G$1" pin="DO"/>
-<pinref part="LED7" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="LED7" gate="G$1" pin="DO"/>
-<pinref part="LED8" gate="G$1" pin="DI"/>
-</segment>
-</net>
 <net name="+5V" class="0">
-<segment>
-<pinref part="LED1" gate="G$1" pin="VDD"/>
-<pinref part="P+1" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED2" gate="G$1" pin="VDD"/>
-<pinref part="P+2" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED3" gate="G$1" pin="VDD"/>
-<pinref part="P+3" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED4" gate="G$1" pin="VDD"/>
-<pinref part="P+4" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED5" gate="G$1" pin="VDD"/>
-<pinref part="P+5" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED6" gate="G$1" pin="VDD"/>
-<pinref part="P+6" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED7" gate="G$1" pin="VDD"/>
-<pinref part="P+7" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="LED8" gate="G$1" pin="VDD"/>
-<pinref part="P+8" gate="1" pin="+5V"/>
-</segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="1"/>
 <wire x1="248.92" y1="0" x2="256.54" y2="0" width="0.1524" layer="91"/>
@@ -1451,38 +1207,6 @@ Based on the following sources:
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="LED8" gate="G$1" pin="GND"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED7" gate="G$1" pin="GND"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED6" gate="G$1" pin="GND"/>
-<pinref part="GND3" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED5" gate="G$1" pin="GND"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED4" gate="G$1" pin="GND"/>
-<pinref part="GND5" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED3" gate="G$1" pin="GND"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED2" gate="G$1" pin="GND"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="LED1" gate="G$1" pin="GND"/>
-<pinref part="GND8" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="U$2" gate="G$1" pin="2"/>
 <wire x1="248.92" y1="-2.54" x2="256.54" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="256.54" y1="-2.54" x2="256.54" y2="-15.24" width="0.1524" layer="91"/>
@@ -1491,7 +1215,6 @@ Based on the following sources:
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="LED1" gate="G$1" pin="DI"/>
 <wire x1="284.48" y1="-25.4" x2="264.16" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="-25.4" x2="264.16" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="3"/>
@@ -1503,11 +1226,4 @@ Based on the following sources:
 </sheets>
 </schematic>
 </drawing>
-<compatibility>
-<note version="8.2" severity="warning">
-Since Version 8.2, EAGLE supports online libraries. The ids
-of those online libraries will not be understood (or retained)
-with this version.
-</note>
-</compatibility>
 </eagle>
