@@ -202,8 +202,8 @@
 <dimension x1="0" y1="40" x2="200" y2="40" x3="100" y3="62" textsize="1.778" layer="47"/>
 <dimension x1="0" y1="40" x2="111" y2="40" x3="55.5" y3="68" textsize="1.778" layer="47"/>
 <text x="69.3" y="6.1" size="2.1844" layer="21">Nostalgy</text>
-<text x="69.3" y="0.9" size="1.016" layer="21">NIT,Tokyo College meister2018</text>
-<text x="69.3" y="2.6" size="1.016" layer="21">nixie tube drive board rev.2</text>
+<text x="69.3" y="0.9" size="1.016" layer="21">NIT,Tokyo College meister2018 </text>
+<text x="69.3" y="2.6" size="1.016" layer="21">nixie tube drive board rev.1</text>
 <text x="69.3" y="4.2" size="1.016" layer="21">Designed by Kinoshita(@_nosita)</text>
 </plain>
 <libraries>

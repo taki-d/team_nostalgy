@@ -12723,9 +12723,9 @@ type RDH, grid 15 mm</description>
 <label x="20.32" y="147.32" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
-<wire x1="68.58" y1="215.9" x2="81.28" y2="215.9" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="IO26"/>
-<label x="68.58" y="215.9" size="1.778" layer="95"/>
+<wire x1="68.58" y1="213.36" x2="81.28" y2="213.36" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="IO27"/>
+<label x="68.58" y="213.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$86" class="0">
@@ -12751,9 +12751,9 @@ type RDH, grid 15 mm</description>
 <label x="20.32" y="116.84" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
-<wire x1="68.58" y1="213.36" x2="81.28" y2="213.36" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="IO27"/>
-<label x="68.58" y="213.36" size="1.778" layer="95"/>
+<wire x1="68.58" y1="210.82" x2="81.28" y2="210.82" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="IO14"/>
+<label x="68.58" y="210.82" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$90" class="0">
@@ -12779,9 +12779,9 @@ type RDH, grid 15 mm</description>
 <label x="22.86" y="88.9" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
-<wire x1="68.58" y1="210.82" x2="81.28" y2="210.82" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="IO14"/>
-<label x="68.58" y="210.82" size="1.778" layer="95"/>
+<wire x1="68.58" y1="208.28" x2="81.28" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="IO12"/>
+<label x="68.58" y="208.28" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
