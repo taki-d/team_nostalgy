@@ -7210,6 +7210,33 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="180118 Library by matsu">
+<packages>
+</packages>
+<symbols>
+<symbol name="+3V3">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="+3V3" prefix="+3V3">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="+3V3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7287,7 +7314,6 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="SUPPLY2" library="taki-library" deviceset="GND" device=""/>
 <part name="J5" library="taki-library" deviceset="PSM-210223-10" device=""/>
 <part name="J6" library="taki-library" deviceset="PSM-210223-10" device=""/>
-<part name="P+1" library="taki-library" deviceset="+5V" device=""/>
 <part name="SUPPLY7" library="taki-library" deviceset="GND" device=""/>
 <part name="C2" library="taki-library" deviceset="C-EU" device="C0603" value="0.1uF"/>
 <part name="SUPPLY8" library="taki-library" deviceset="GND" device=""/>
@@ -7330,6 +7356,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="P+3" library="taki-library" deviceset="+5V" device=""/>
 <part name="+3V1" library="taki-library" deviceset="+3V3" device=""/>
 <part name="SUPPLY5" library="taki-library" deviceset="GND" device=""/>
+<part name="+3V2" library="180118 Library by matsu" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7518,9 +7545,6 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <attribute name="VALUE" x="89.535" y="-172.72" size="1.778" layer="96" rot="R180"/>
 <attribute name="NAME" x="89.535" y="-203.962" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="P+1" gate="1" x="-12.7" y="71.12" smashed="yes">
-<attribute name="VALUE" x="-15.24" y="66.04" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="SUPPLY7" gate="GND" x="48.26" y="55.88" smashed="yes">
 <attribute name="VALUE" x="46.355" y="52.705" size="1.778" layer="96"/>
 </instance>
@@ -7668,6 +7692,9 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </instance>
 <instance part="SUPPLY5" gate="GND" x="-25.4" y="-30.48" smashed="yes">
 <attribute name="VALUE" x="-27.305" y="-33.655" size="1.778" layer="96"/>
+</instance>
+<instance part="+3V2" gate="G$1" x="-12.7" y="71.12" smashed="yes">
+<attribute name="VALUE" x="-15.24" y="66.04" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -7966,6 +7993,12 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 <wire x1="-2.54" y1="-12.7" x2="-2.54" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<wire x1="-12.7" y1="68.58" x2="-12.7" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="VDD"/>
+<wire x1="-12.7" y1="66.04" x2="-10.16" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+</segment>
 </net>
 <net name="EN" class="0">
 <segment>
@@ -8263,12 +8296,6 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </net>
 <net name="+5V" class="0">
 <segment>
-<pinref part="P+1" gate="1" pin="+5V"/>
-<wire x1="-12.7" y1="68.58" x2="-12.7" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="VDD"/>
-<wire x1="-12.7" y1="66.04" x2="-10.16" y2="66.04" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="P+5" gate="1" pin="+5V"/>
 <wire x1="-266.7" y1="-93.98" x2="-266.7" y2="-99.06" width="0.1524" layer="91"/>
 <wire x1="-266.7" y1="-99.06" x2="-259.08" y2="-99.06" width="0.1524" layer="91"/>
@@ -8304,7 +8331,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <wire x1="-43.18" y1="-12.7" x2="-38.1" y2="-12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="D_M" class="2">
+<net name="D_N" class="2">
 <segment>
 <pinref part="J1" gate="G$1" pin="D-"/>
 <wire x1="-160.02" y1="109.22" x2="-149.86" y2="109.22" width="0.1524" layer="91"/>
