@@ -243,6 +243,7 @@
 <circle x="75" y="59.5" radius="3" width="0.0762" layer="47"/>
 <hole x="25" y="59.5" drill="3.2"/>
 <circle x="25" y="59.5" radius="3" width="0.0762" layer="47"/>
+<dimension x1="25" y1="93.5" x2="25" y2="56.5" x3="-7" y3="75" textsize="1.778" layer="1"/>
 </plain>
 <libraries>
 <library name="taki-library">
@@ -799,6 +800,47 @@ BME280</description>
 </package3d>
 </packages3d>
 </library>
+<library name="ITEAD">
+<packages>
+<package name="PSF-A85">
+<wire x1="0" y1="0" x2="13.716" y2="0" width="0.127" layer="21"/>
+<wire x1="13.716" y1="0" x2="13.716" y2="13.462" width="0.127" layer="21"/>
+<wire x1="13.716" y1="13.462" x2="0" y2="13.462" width="0.127" layer="21"/>
+<wire x1="0" y1="13.462" x2="0" y2="0" width="0.127" layer="21"/>
+<smd name="P$1" x="3.81" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$2" x="5.08" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$3" x="6.35" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$4" x="7.62" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$5" x="8.89" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$6" x="10.16" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$7" x="11.43" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$8" x="12.7" y="0" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$9" x="13.716" y="2.286" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$10" x="13.716" y="3.556" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$11" x="13.716" y="4.826" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$12" x="13.716" y="6.096" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$13" x="13.716" y="7.366" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$14" x="13.716" y="8.636" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$15" x="13.716" y="9.906" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$16" x="13.716" y="11.176" dx="0.762" dy="2.032" layer="1" rot="R90"/>
+<smd name="P$17" x="12.7" y="13.462" dx="0.762" dy="2.032" layer="1" rot="R180"/>
+<smd name="P$18" x="11.43" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$19" x="10.16" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$20" x="8.89" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$21" x="7.62" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$22" x="6.35" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$23" x="5.08" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<smd name="P$24" x="3.81" y="13.462" dx="0.762" dy="2.032" layer="1"/>
+<circle x="3.81" y="1.778" radius="0.254" width="0.254" layer="21"/>
+<text x="4.572" y="9.144" size="1.27" layer="25">&gt;NAME</text>
+<text x="4.572" y="7.112" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="0" y1="13.462" x2="13.716" y2="13.462" width="0.127" layer="51"/>
+<wire x1="13.716" y1="13.462" x2="13.716" y2="0" width="0.127" layer="51"/>
+<wire x1="13.716" y1="0" x2="0" y2="0" width="0.127" layer="51"/>
+<wire x1="0" y1="0" x2="0" y2="13.462" width="0.127" layer="51"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1175,6 +1217,10 @@ design rules under a new name.</description>
 </element>
 <element name="C16" library="taki-library" package="C0603" value="0.1uF" x="33.71" y="70.29" smashed="yes" rot="R270">
 <attribute name="NAME" x="34.382" y="71.929" size="1.27" layer="25" rot="R270"/>
+</element>
+<element name="U6" library="ITEAD" package="PSF-A85" value="PSF-A85" x="9.5" y="71.5" smashed="yes">
+<attribute name="NAME" x="14.072" y="80.644" size="1.27" layer="25"/>
+<attribute name="VALUE" x="14.072" y="78.612" size="1.27" layer="27"/>
 </element>
 </elements>
 <signals>
@@ -2000,38 +2046,34 @@ design rules under a new name.</description>
 <wire x1="22.5" y1="86.5" x2="21" y2="86.5" width="0.1524" layer="1"/>
 <wire x1="21" y1="86.5" x2="20.5" y2="87" width="0.1524" layer="1"/>
 <wire x1="20.5" y1="87" x2="20.5" y2="88.325" width="0.1524" layer="1"/>
-<wire x1="30.885" y1="78.115" x2="22.5" y2="86.5" width="0.1524" layer="1"/>
 <contactref element="U1" pad="6"/>
 <wire x1="33.625" y1="75.665" x2="32.135" y2="75.665" width="0.1524" layer="1"/>
 <wire x1="30.885" y1="76.915" x2="30.885" y2="78.115" width="0.1524" layer="1"/>
 <wire x1="32.135" y1="75.665" x2="30.885" y2="76.915" width="0.1524" layer="1"/>
+<wire x1="30.885" y1="78.115" x2="22.5" y2="86.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$9">
 <contactref element="J8" pad="6"/>
 <contactref element="U1" pad="7"/>
-<wire x1="22.5" y1="87.5" x2="31.5" y2="78.5" width="0.1524" layer="1"/>
 <wire x1="31.5" y1="78.5" x2="31.5" y2="77" width="0.1524" layer="1"/>
 <wire x1="31.5" y1="77" x2="32.185" y2="76.315" width="0.1524" layer="1"/>
 <wire x1="32.185" y1="76.315" x2="33.625" y2="76.315" width="0.1524" layer="1"/>
 <wire x1="22.5" y1="90.675" x2="22.5" y2="87.5" width="0.1524" layer="1"/>
+<wire x1="22.5" y1="87.5" x2="31.5" y2="78.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$10">
 <contactref element="J8" pad="5"/>
 <contactref element="U1" pad="8"/>
 <wire x1="24.5" y1="88.325" x2="24.5" y2="86.5" width="0.1524" layer="1"/>
-<wire x1="24.5" y1="86.5" x2="32" y2="79" width="0.1524" layer="1"/>
-<wire x1="32" y1="79" x2="32" y2="77.5" width="0.1524" layer="1"/>
 <wire x1="32" y1="77.5" x2="32.535" y2="76.965" width="0.1524" layer="1"/>
 <wire x1="32.535" y1="76.965" x2="33.625" y2="76.965" width="0.1524" layer="1"/>
+<wire x1="32" y1="77.5" x2="24.5" y2="86.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11">
 <contactref element="J8" pad="4"/>
 <contactref element="U1" pad="9"/>
-<wire x1="33.625" y1="77.615" x2="32.515" y2="77.615" width="0.1524" layer="1"/>
-<wire x1="32.515" y1="77.615" x2="32.44" y2="77.69" width="0.1524" layer="1"/>
-<wire x1="32.44" y1="77.69" x2="32.44" y2="79.49" width="0.1524" layer="1"/>
 <wire x1="26.5" y1="85.43" x2="26.5" y2="90.675" width="0.1524" layer="1"/>
-<wire x1="32.44" y1="79.49" x2="26.5" y2="85.43" width="0.1524" layer="1"/>
+<wire x1="26.5" y1="85.43" x2="33.625" y2="77.615" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

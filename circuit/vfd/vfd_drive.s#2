@@ -4345,24 +4345,6 @@ package type SS</description>
 <rectangle x1="-3.1027" y1="2.6416" x2="-2.7471" y2="3.937" layer="51"/>
 <wire x1="-3.81" y1="-2.54" x2="-3.81" y2="2.54" width="0.127" layer="21"/>
 </package>
-<package name="FSM-21045-10">
-<smd name="1" x="0" y="1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="2" x="2" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="3" x="4" y="1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="4" x="6" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="5" x="8" y="1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="6" x="10" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="7" x="12" y="1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="8" x="14" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="9" x="16" y="1.175" dx="0.89" dy="1.85" layer="1"/>
-<smd name="10" x="18" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
-<wire x1="-1" y1="1.2" x2="-1" y2="-1.2" width="0.127" layer="21"/>
-<wire x1="-1" y1="-1.2" x2="19" y2="-1.2" width="0.127" layer="21"/>
-<wire x1="19" y1="-1.2" x2="19" y2="1.2" width="0.127" layer="21"/>
-<text x="0" y="3" size="1.27" layer="25">&gt;NAME</text>
-<text x="0" y="-4" size="1.27" layer="27">&gt;VALUE</text>
-<wire x1="19" y1="1.2" x2="-1" y2="1.2" width="0.127" layer="21"/>
-</package>
 <package name="SOIC-28-MI">
 <smd name="1" x="0" y="-4.6865" dx="1.981" dy="0.533" layer="1" rot="R90"/>
 <smd name="2" x="1.27" y="-4.6865" dx="1.981" dy="0.533" layer="1" rot="R90"/>
@@ -4399,6 +4381,24 @@ package type SS</description>
 <circle x="0.381" y="-2.54" radius="0.179603125" width="0" layer="21"/>
 <text x="0" y="6.35" size="1.778" layer="25">&gt;NAME</text>
 <text x="0" y="-8.89" size="1.778" layer="27">&gt;VALUE</text>
+</package>
+<package name="FSM-21045-10">
+<smd name="1" x="0" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="2" x="2" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="3" x="4" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="4" x="6" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="5" x="8" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="6" x="10" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="7" x="12" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="8" x="14" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="9" x="16" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="10" x="18" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<wire x1="-1" y1="1.2" x2="-1" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1.2" x2="19" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="19" y1="-1.2" x2="19" y2="1.2" width="0.127" layer="21"/>
+<text x="0" y="3" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="-4" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="19" y1="1.2" x2="-1" y2="1.2" width="0.127" layer="21"/>
 </package>
 <package name="PSM-210223-10">
 <smd name="1" x="0" y="1.175" dx="0.85" dy="2.35" layer="1"/>
@@ -6970,30 +6970,6 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="FSM-21045-10" prefix="J">
-<gates>
-<gate name="G$1" symbol="PIN_HEADER_1X10_10P" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="FSM-21045-10">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="10" pad="10"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
-<connect gate="G$1" pin="7" pad="7"/>
-<connect gate="G$1" pin="8" pad="8"/>
-<connect gate="G$1" pin="9" pad="9"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="MAX6921AWI+" prefix="U">
 <gates>
 <gate name="G$1" symbol="MAX6921AWI+" x="0" y="0"/>
@@ -7029,6 +7005,30 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="G$1" pin="VFDIN" pad="27"/>
 <connect gate="G$1" pin="VFDOUT" pad="2"/>
 <connect gate="G$1" pin="VFLOAD" pad="16"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FSM-21045-10" prefix="J">
+<gates>
+<gate name="G$1" symbol="PIN_HEADER_1X10_10P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FSM-21045-10">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7306,14 +7306,14 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="SUPPLY4" library="taki-library" deviceset="GND" device=""/>
 <part name="DIS1" library="taki-library" deviceset="IV18" device=""/>
 <part name="U1" library="taki-library" deviceset="PIC18F14K50-I" device=""/>
-<part name="J3" library="taki-library" deviceset="FSM-21045-10" device=""/>
+<part name="J3" library="taki-library" deviceset="PSM-210223-10" device=""/>
 <part name="C1" library="taki-library" deviceset="C-EU" device="C0603" value="0.1uF"/>
-<part name="J4" library="taki-library" deviceset="FSM-21045-10" device=""/>
+<part name="J4" library="taki-library" deviceset="PSM-210223-10" device=""/>
 <part name="U2" library="taki-library" deviceset="MAX6921AWI+" device=""/>
 <part name="SUPPLY6" library="taki-library" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="taki-library" deviceset="GND" device=""/>
-<part name="J5" library="taki-library" deviceset="PSM-210223-10" device=""/>
-<part name="J6" library="taki-library" deviceset="PSM-210223-10" device=""/>
+<part name="J5" library="taki-library" deviceset="FSM-21045-10" device=""/>
+<part name="J6" library="taki-library" deviceset="FSM-21045-10" device=""/>
 <part name="SUPPLY7" library="taki-library" deviceset="GND" device=""/>
 <part name="C2" library="taki-library" deviceset="C-EU" device="C0603" value="0.1uF"/>
 <part name="SUPPLY8" library="taki-library" deviceset="GND" device=""/>
