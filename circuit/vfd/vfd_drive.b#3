@@ -1195,6 +1195,10 @@ design rules under a new name.</description>
 <attribute name="NAME" x="-28.389" y="-175.611" size="1.27" layer="25"/>
 <attribute name="VALUE" x="-28.389" y="-178.532" size="1.27" layer="27"/>
 </element>
+<element name="R24" library="taki-library" package="R0603" value="10k" x="-27.5" y="-182" smashed="yes">
+<attribute name="NAME" x="-28.389" y="-181.111" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-28.389" y="-184.032" size="1.27" layer="27"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -1326,6 +1330,8 @@ design rules under a new name.</description>
 <wire x1="40" y1="2.5" x2="40.63" y2="1.87" width="0.8128" layer="1"/>
 <wire x1="40.63" y1="1.87" x2="41.8436" y2="1.87" width="0.8128" layer="1"/>
 <contactref element="R23" pad="1"/>
+<contactref element="U6" pad="P$12"/>
+<contactref element="U6" pad="P$20"/>
 <wire x1="-26.65" y1="-151" x2="-28.35" y2="-176.5" width="0" layer="19" extent="1-1"/>
 <wire x1="-28.35" y1="-145.5" x2="-26.65" y2="-151" width="0" layer="19" extent="1-1"/>
 <wire x1="-20.65" y1="-151" x2="-26.65" y2="-151" width="0" layer="19" extent="1-1"/>
@@ -1354,6 +1360,8 @@ design rules under a new name.</description>
 <wire x1="41.9" y1="1.87" x2="41.8436" y2="1.87" width="0" layer="19" extent="1-1"/>
 <wire x1="38.5864" y1="2.99" x2="40" y2="3.5" width="0" layer="19" extent="1-1"/>
 <wire x1="60.11" y1="26.45" x2="61.573225" y2="16.619165625" width="0" layer="19" extent="1-1"/>
+<wire x1="42.716" y1="27.596" x2="54.5" y2="31.15" width="0" layer="19" extent="1-1"/>
+<wire x1="37.89" y1="34.962" x2="42.716" y2="27.596" width="0" layer="19" extent="1-1"/>
 <wire x1="13.51" y1="9.3" x2="38.5864" y2="2.99" width="0" layer="19" extent="1-1"/>
 <wire x1="-8.255" y1="42.7465" x2="8.26" y2="28.81" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -1411,6 +1419,9 @@ design rules under a new name.</description>
 <wire x1="59.15" y1="32.85" x2="59.5" y2="32.5" width="0.8128" layer="1"/>
 <wire x1="59.5" y1="32.5" x2="59.5" y2="28.85" width="0.8128" layer="1"/>
 <wire x1="59.5" y1="35.15" x2="59.5" y2="32.5" width="0.8128" layer="1"/>
+<contactref element="R24" pad="2"/>
+<contactref element="U6" pad="P$23"/>
+<wire x1="-28.35" y1="-151" x2="-26.65" y2="-182" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.0875" y1="-135.6797" x2="-28.35" y2="-151" width="0" layer="19" extent="1-1"/>
 <wire x1="-23.1825" y1="-130.3203" x2="-25.0875" y2="-135.6797" width="0" layer="19" extent="1-1"/>
 <wire x1="-22.5475" y1="-130.3203" x2="-23.1825" y2="-130.3203" width="0" layer="19" extent="1-1"/>
@@ -1424,8 +1435,9 @@ design rules under a new name.</description>
 <wire x1="53.6832" y1="-12.3896" x2="44.67" y2="-63.415" width="0" layer="19" extent="1-1"/>
 <wire x1="55.551" y1="-12.376" x2="53.6832" y2="-12.3896" width="0" layer="19" extent="1-1"/>
 <wire x1="59.5" y1="28.85" x2="55.551" y2="-12.376" width="0" layer="19" extent="1-1"/>
+<wire x1="34.08" y1="34.962" x2="54.5" y2="32.85" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="EN">
+<signal name="RESET">
 <contactref element="R3" pad="1"/>
 <contactref element="C7" pad="1"/>
 <contactref element="R4" pad="2"/>
@@ -1873,6 +1885,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="RXD">
 <contactref element="U1" pad="4"/>
+<contactref element="U6" pad="P$22"/>
+<wire x1="35.35" y1="34.962" x2="-24.4525" y2="-135.6797" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="U1" pad="17"/>
@@ -1896,6 +1910,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="TXD">
 <contactref element="U1" pad="20"/>
+<contactref element="U6" pad="P$21"/>
+<wire x1="36.62" y1="34.962" x2="-26.3575" y2="-130.3203" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11">
 <contactref element="R14" pad="1"/>
@@ -1941,6 +1957,11 @@ design rules under a new name.</description>
 <contactref element="U6" pad="P$8"/>
 <contactref element="R23" pad="2"/>
 <wire x1="41.7" y1="21.5" x2="-26.65" y2="-176.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$21">
+<contactref element="U6" pad="P$3"/>
+<contactref element="R24" pad="1"/>
+<wire x1="35.35" y1="21.5" x2="-28.35" y2="-182" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
