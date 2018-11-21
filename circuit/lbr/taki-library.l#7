@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="yes" active="yes"/>
@@ -12618,6 +12618,22 @@ Source: Epson Toyocom FA-20H.pdf</description>
 <wire x1="1.925" y1="-3.25" x2="-1.925" y2="-3.25" width="0.2" layer="21"/>
 <wire x1="-1.925" y1="-3.25" x2="-1.925" y2="3.25" width="0.2" layer="21"/>
 <wire x1="-4.025" y1="3.125" x2="-2.275" y2="3.125" width="0.2" layer="21"/>
+</package>
+<package name="FSM-21045-8">
+<smd name="1" x="0" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="2" x="2" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="3" x="4" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="4" x="6" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="5" x="8" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="6" x="10" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="7" x="12" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="8" x="14" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<wire x1="-1" y1="1.2" x2="-1" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1.2" x2="15" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="15" y1="-1.2" x2="15" y2="1.2" width="0.127" layer="21"/>
+<text x="0" y="3" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="-4" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="15" y1="1.2" x2="-1" y2="1.2" width="0.127" layer="21"/>
 </package>
 </packages>
 <packages3d>

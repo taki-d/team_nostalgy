@@ -20270,7 +20270,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="FSM-21045-10">
+<deviceset name="FSM-21045-10" prefix="J">
 <gates>
 <gate name="G$1" symbol="PIN_HEADER_1X10_10P" x="0" y="-2.54"/>
 </gates>

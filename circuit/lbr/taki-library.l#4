@@ -20027,7 +20027,7 @@ Source: http://akizukidenshi.com/download/TD62083AP.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="FSM-21045-10" prefix="J">
+<deviceset name="FSM-21045-8" prefix="J">
 <gates>
 <gate name="G$1" symbol="PIN_HEADER_1X8_8P" x="2.54" y="0"/>
 </gates>
@@ -20263,6 +20263,30 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="A" pin="GND" pad="1"/>
 <connect gate="A" pin="IN" pad="3"/>
 <connect gate="A" pin="OUT" pad="2 4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FSM-21045-10">
+<gates>
+<gate name="G$1" symbol="PIN_HEADER_1X10_10P" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="FSM-21045-10">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
 </connects>
 <technologies>
 <technology name=""/>
