@@ -7424,7 +7424,6 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="P+1" library="taki-library" deviceset="+24V" device=""/>
 <part name="R11" library="taki-library" deviceset="R-EU_" device="R0603" value="27k"/>
 <part name="SUPPLY2" library="taki-library" deviceset="GND" device=""/>
-<part name="U7" library="taki-library" deviceset="MAX6921AWI+" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7769,10 +7768,6 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </instance>
 <instance part="SUPPLY2" gate="GND" x="-38.1" y="-121.92" smashed="yes">
 <attribute name="VALUE" x="-45.085" y="-122.555" size="1.778" layer="96"/>
-</instance>
-<instance part="U7" gate="G$1" x="78.74" y="-177.8" smashed="yes">
-<attribute name="NAME" x="69.342" y="-161.544" size="1.778" layer="95"/>
-<attribute name="VALUE" x="71.12" y="-218.44" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
