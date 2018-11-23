@@ -2,6 +2,7 @@
 
 #include <Time.h>
 #include <TimeLib.h>
+#include <WiFi.h>
 
 #include <Wire.h>
 #include "RTClib.h"
@@ -12,6 +13,11 @@ hw_timer_t * timer = NULL;
 
 volatile SemaphoreHandle_t timerSemaphore;
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
+
+const char* ssid = "***************";
+const char* pass = "***************";
+
+const int8_t timezone = 9;
 
 volatile bool anode_signal_pattern[8][3] = {
   {0,0,0},
@@ -135,6 +141,23 @@ void setup() {
     serial0.println("Couldn't find RTC");
     while (1);
   }
+
+  Serial.printf("Connecting to %s ", ssid);
+  WiFi.begin(ssid, pass);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println(" CONNECTED");
+  configTzTime("JST-9", "ntp.nict.jp", "time.google.com", "ntp.jst.mfeed.ad.jp");
+
+  time_t now;
+  struct tm timeinfo;
+  if (!getLocalTime(&timeinfo)) {
+    Serial.println("Failed to obtain time");
+  }
+  time(&now);
+  rtc.adjust(DateTime(now)+TimeSpan(0, timezone, 0, 0));
   
   // Create semaphore to inform us when the timer has fired
   timerSemaphore = xSemaphoreCreateBinary();
