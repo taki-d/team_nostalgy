@@ -12651,6 +12651,125 @@ Source: Epson Toyocom FA-20H.pdf</description>
 <text x="0" y="3.81" size="1.27" layer="25">&gt;NAME</text>
 <text x="0" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="ESP12">
+<description>ESP8266 Module 12</description>
+<wire x1="7.9" y1="14.2" x2="7.9" y2="8.4" width="0.127" layer="21"/>
+<wire x1="7.9" y1="-9.8" x2="-8.1" y2="-9.8" width="0.127" layer="21"/>
+<wire x1="-8.1" y1="8.4" x2="-8.1" y2="14.2" width="0.127" layer="21"/>
+<wire x1="-8.1" y1="14.2" x2="7.9" y2="14.2" width="0.127" layer="21"/>
+<wire x1="-8.1" y1="8.4" x2="7.9" y2="8.4" width="0.127" layer="21"/>
+<pad name="GND" x="6.9" y="-8.2" drill="0.7" shape="offset"/>
+<pad name="GPIO15" x="6.9" y="-6.2" drill="0.7" shape="offset"/>
+<pad name="GPIO2" x="6.9" y="-4.2" drill="0.7" shape="offset"/>
+<pad name="GPIO0" x="6.9" y="-2.2" drill="0.7" shape="offset"/>
+<pad name="GPIO5" x="6.9" y="-0.2" drill="0.7" shape="offset"/>
+<pad name="GPIO4" x="6.9" y="1.8" drill="0.7" shape="offset"/>
+<pad name="RX" x="6.9" y="3.8" drill="0.7" shape="offset"/>
+<pad name="TX" x="6.9" y="5.8" drill="0.7" shape="offset"/>
+<pad name="VCC" x="-7.1" y="-8.2" drill="0.7" shape="offset" rot="R180"/>
+<pad name="GPIO13" x="-7.1" y="-6.2" drill="0.7" shape="offset" rot="R180"/>
+<pad name="GPIO12" x="-7.1" y="-4.2" drill="0.7" shape="offset" rot="R180"/>
+<pad name="GPIO14" x="-7.1" y="-2.2" drill="0.7" shape="offset" rot="R180"/>
+<pad name="GPIO16" x="-7.1" y="-0.2" drill="0.7" shape="offset" rot="R180"/>
+<pad name="CH_PD" x="-7.1" y="1.8" drill="0.7" shape="offset" rot="R180"/>
+<pad name="ADC" x="-7.1" y="3.8" drill="0.7" shape="offset" rot="R180"/>
+<pad name="RESET" x="-7.1" y="5.8" drill="0.7" shape="offset" rot="R180"/>
+<wire x1="-4.9" y1="8.6" x2="-4.9" y2="13.5" width="0.6096" layer="21"/>
+<wire x1="-4.9" y1="13.5" x2="-4" y2="13.5" width="0.6096" layer="21"/>
+<wire x1="-4" y1="13.5" x2="-4" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-4" y1="9.8" x2="-3" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-3" y1="9.8" x2="-3" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-3" y1="13.4" x2="-1.8" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-1.8" y1="13.4" x2="-1.8" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-1.8" y1="9.8" x2="-0.6" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-0.6" y1="9.8" x2="-0.6" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-0.6" y1="13.4" x2="0.5" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="0.5" y1="13.4" x2="0.5" y2="9.9" width="0.6096" layer="21"/>
+<wire x1="0.5" y1="9.9" x2="1.6" y2="9.9" width="0.6096" layer="21"/>
+<wire x1="1.6" y1="9.9" x2="1.6" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="1.6" y1="13.4" x2="5.6" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-4.9" y1="8.5" x2="-4.9" y2="7.9" width="0.6096" layer="21"/>
+<wire x1="-4.9" y1="7.9" x2="1.6" y2="7.9" width="0.6096" layer="21"/>
+<text x="-4" y="2.6" size="1.4224" layer="21">ESP - 12</text>
+<text x="-7.7" y="-11.9" size="1.4224" layer="27">&gt;Value</text>
+<text x="-7.7" y="15.1" size="1.4224" layer="25">&gt;Name</text>
+<wire x1="-8.1026" y1="8.4074" x2="-8.1026" y2="6.5786" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="5.0292" x2="-8.1026" y2="4.572" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="3.0226" x2="-8.1026" y2="2.5654" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="1.016" x2="-8.1026" y2="0.5842" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="-0.9652" x2="-8.1026" y2="-1.4224" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="-2.9718" x2="-8.1026" y2="-3.429" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="-4.9784" x2="-8.1026" y2="-5.4356" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="-6.985" x2="-8.1026" y2="-7.4168" width="0.127" layer="21"/>
+<wire x1="-8.1026" y1="-8.9662" x2="-8.1026" y2="-9.8044" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="-9.779" x2="7.8994" y2="-8.9916" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="-6.9596" x2="7.8994" y2="-7.4422" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="-4.9276" x2="7.8994" y2="-5.461" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="-2.921" x2="7.8994" y2="-3.4544" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="-0.9398" x2="7.8994" y2="-1.4478" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="1.0414" x2="7.8994" y2="0.5588" width="0.127" layer="21"/>
+<wire x1="7.9248" y1="3.048" x2="7.9248" y2="2.54" width="0.127" layer="21"/>
+<wire x1="7.9248" y1="5.0546" x2="7.9248" y2="4.572" width="0.127" layer="21"/>
+<wire x1="7.874" y1="8.4074" x2="7.8994" y2="8.4074" width="0.127" layer="21"/>
+<wire x1="7.8994" y1="8.4074" x2="7.8994" y2="6.5532" width="0.127" layer="21"/>
+</package>
+<package name="ESP12-SMD">
+<description>ESP8266 Module 12 SMD pads</description>
+<wire x1="7.9" y1="14.2" x2="7.9" y2="6.9" width="0.127" layer="21"/>
+<wire x1="7.9" y1="-9.8" x2="-8.1" y2="-9.8" width="0.127" layer="21"/>
+<wire x1="-8.1" y1="6.9" x2="-8.1" y2="14.2" width="0.127" layer="21"/>
+<wire x1="-8.1" y1="14.2" x2="7.9" y2="14.2" width="0.127" layer="21"/>
+<wire x1="-4.9" y1="8.6" x2="-4.9" y2="13.5" width="0.6096" layer="21"/>
+<wire x1="-4.9" y1="13.5" x2="-4" y2="13.5" width="0.6096" layer="21"/>
+<wire x1="-4" y1="13.5" x2="-4" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-4" y1="9.8" x2="-3" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-3" y1="9.8" x2="-3" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-3" y1="13.4" x2="-1.8" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-1.8" y1="13.4" x2="-1.8" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-1.8" y1="9.8" x2="-0.6" y2="9.8" width="0.6096" layer="21"/>
+<wire x1="-0.6" y1="9.8" x2="-0.6" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-0.6" y1="13.4" x2="0.5" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="0.5" y1="13.4" x2="0.5" y2="9.9" width="0.6096" layer="21"/>
+<wire x1="0.5" y1="9.9" x2="1.6" y2="9.9" width="0.6096" layer="21"/>
+<wire x1="1.6" y1="9.9" x2="1.6" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="1.6" y1="13.4" x2="5.6" y2="13.4" width="0.6096" layer="21"/>
+<wire x1="-4.9" y1="8.5" x2="-4.9" y2="7.9" width="0.6096" layer="21"/>
+<wire x1="-4.9" y1="7.9" x2="1.6" y2="7.9" width="0.6096" layer="21"/>
+<text x="0" y="3" size="1.4224" layer="21" align="bottom-center">ESP - 12</text>
+<text x="-7.7" y="-11.9" size="1.4224" layer="27">&gt;Value</text>
+<text x="-7.7" y="15.1" size="1.4224" layer="25">&gt;Name</text>
+<smd name="RESET" x="-8.3" y="5.8" dx="3" dy="1.2" layer="1"/>
+<smd name="ADC" x="-8.3" y="3.8" dx="3" dy="1.2" layer="1"/>
+<smd name="CH_PD" x="-8.3" y="1.8" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO16" x="-8.3" y="-0.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO14" x="-8.3" y="-2.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO12" x="-8.3" y="-4.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO13" x="-8.3" y="-6.2" dx="3" dy="1.2" layer="1"/>
+<smd name="VCC" x="-8.3" y="-8.2" dx="3" dy="1.2" layer="1"/>
+<smd name="TXD0" x="8.1" y="5.8" dx="3" dy="1.2" layer="1"/>
+<smd name="RXD0" x="8.1" y="3.8" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO4" x="8.1" y="1.8" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO5" x="8.1" y="-0.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO0" x="8.1" y="-2.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO2" x="8.1" y="-4.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GPIO15" x="8.1" y="-6.2" dx="3" dy="1.2" layer="1"/>
+<smd name="GND" x="8.1" y="-8.2" dx="3" dy="1.2" layer="1"/>
+</package>
+<package name="FSM-21045-7">
+<smd name="1" x="0" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="2" x="2" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="3" x="4" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="4" x="6" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="5" x="8" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="6" x="10" y="-1.175" dx="0.89" dy="1.85" layer="1"/>
+<smd name="7" x="12" y="1.175" dx="0.89" dy="1.85" layer="1"/>
+<wire x1="-1" y1="1.2" x2="-1" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1.2" x2="13" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="13" y1="-1.2" x2="13" y2="1.2" width="0.127" layer="21"/>
+<text x="0" y="3" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="-4" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="13" y1="1.2" x2="-1" y2="1.2" width="0.127" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="SSOP20_L" urn="urn:adsk.eagle:package:38726/1" locally_modified="yes" type="box">
@@ -14997,6 +15116,30 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pin name="7" x="3.81" y="5.08" visible="pad" length="short" rot="R270"/>
 <wire x1="6.35" y1="2.286" x2="6.35" y2="1.016" width="0.6096" layer="94"/>
 <pin name="8" x="6.35" y="5.08" visible="pad" length="short" rot="R270"/>
+</symbol>
+<symbol name="ESP12">
+<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-12.7" x2="10.16" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-12.7" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
+<pin name="RESET" x="-17.78" y="7.62" visible="pin" length="middle"/>
+<pin name="ADC" x="-17.78" y="5.08" visible="pin" length="middle"/>
+<pin name="CH_PD" x="-17.78" y="2.54" visible="pin" length="middle"/>
+<pin name="GPIO16" x="-17.78" y="0" visible="pin" length="middle"/>
+<pin name="GPIO14" x="-17.78" y="-2.54" visible="pin" length="middle"/>
+<pin name="GPIO12" x="-17.78" y="-5.08" visible="pin" length="middle"/>
+<pin name="GPIO13" x="-17.78" y="-7.62" visible="pin" length="middle"/>
+<pin name="VCC" x="-17.78" y="-10.16" visible="pin" length="middle"/>
+<pin name="GND" x="15.24" y="-10.16" visible="pin" length="middle" rot="R180"/>
+<pin name="GPIO15" x="15.24" y="-7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="GPIO2" x="15.24" y="-5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="GPIO0" x="15.24" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="GPIO5" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="GPIO4" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="RX" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="TX" x="15.24" y="7.62" visible="pin" length="middle" rot="R180"/>
+<text x="-12.7" y="10.16" size="1.778" layer="95">&gt;Name</text>
+<text x="-12.7" y="-15.24" size="1.778" layer="96">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -20303,6 +20446,82 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="G$1" pin="7" pad="7"/>
 <connect gate="G$1" pin="8" pad="8"/>
 <connect gate="G$1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PSM-210223-8" prefix="J">
+<gates>
+<gate name="G$1" symbol="PIN_HEADER_1X8_8P" x="2.54" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="PSM-210223-8">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ESP12" prefix="U" uservalue="yes">
+<description>ESP8266 Wifi module 12</description>
+<gates>
+<gate name="G$1" symbol="ESP12" x="0" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="ESP12">
+<connects>
+<connect gate="G$1" pin="ADC" pad="ADC"/>
+<connect gate="G$1" pin="CH_PD" pad="CH_PD"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GPIO0" pad="GPIO0"/>
+<connect gate="G$1" pin="GPIO12" pad="GPIO12"/>
+<connect gate="G$1" pin="GPIO13" pad="GPIO13"/>
+<connect gate="G$1" pin="GPIO14" pad="GPIO14"/>
+<connect gate="G$1" pin="GPIO15" pad="GPIO15"/>
+<connect gate="G$1" pin="GPIO16" pad="GPIO16"/>
+<connect gate="G$1" pin="GPIO2" pad="GPIO2"/>
+<connect gate="G$1" pin="GPIO4" pad="GPIO4"/>
+<connect gate="G$1" pin="GPIO5" pad="GPIO5"/>
+<connect gate="G$1" pin="RESET" pad="RESET"/>
+<connect gate="G$1" pin="RX" pad="RX"/>
+<connect gate="G$1" pin="TX" pad="TX"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD" package="ESP12-SMD">
+<connects>
+<connect gate="G$1" pin="ADC" pad="ADC"/>
+<connect gate="G$1" pin="CH_PD" pad="CH_PD"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GPIO0" pad="GPIO0"/>
+<connect gate="G$1" pin="GPIO12" pad="GPIO12"/>
+<connect gate="G$1" pin="GPIO13" pad="GPIO13"/>
+<connect gate="G$1" pin="GPIO14" pad="GPIO14"/>
+<connect gate="G$1" pin="GPIO15" pad="GPIO15"/>
+<connect gate="G$1" pin="GPIO16" pad="GPIO16"/>
+<connect gate="G$1" pin="GPIO2" pad="GPIO2"/>
+<connect gate="G$1" pin="GPIO4" pad="GPIO4"/>
+<connect gate="G$1" pin="GPIO5" pad="GPIO5"/>
+<connect gate="G$1" pin="RESET" pad="RESET"/>
+<connect gate="G$1" pin="RX" pad="RXD0"/>
+<connect gate="G$1" pin="TX" pad="TXD0"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
 </connects>
 <technologies>
 <technology name=""/>
