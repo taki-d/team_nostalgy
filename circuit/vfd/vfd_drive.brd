@@ -220,6 +220,11 @@
 <wire x1="54.08" y1="24.917" x2="53.084" y2="24" width="0" layer="20" curve="-85.22"/>
 <dimension x1="23" y1="46" x2="23" y2="54" x3="14" y3="50" textsize="1.778" layer="47"/>
 <dimension x1="23" y1="46" x2="23" y2="0" x3="-8" y3="23" textsize="1.778" layer="47"/>
+<hole x="4" y="85" drill="3.2"/>
+<text x="17.5" y="6.5" size="2.1844" layer="21">Nostalgy</text>
+<text x="13.5" y="4.5" size="1.016" layer="21">Designed by Kinoshita(@_nosita)</text>
+<text x="15.5" y="3" size="1.016" layer="21">vfd tube drive board rev.2</text>
+<text x="18" y="1.5" size="1.016" layer="21">nittc meister2018</text>
 </plain>
 <libraries>
 <library name="taki-library">
@@ -1615,7 +1620,6 @@ design rules under a new name.</description>
 <via x="4.5" y="67" extent="1-16" drill="0.3048"/>
 <via x="4.5" y="73.5" extent="1-16" drill="0.3048"/>
 <via x="4.5" y="81.5" extent="1-16" drill="0.3048"/>
-<via x="4.5" y="85" extent="1-16" drill="0.3048"/>
 <via x="8.5" y="90" extent="1-16" drill="0.3048"/>
 <via x="12" y="93.5" extent="1-16" drill="0.3048"/>
 <via x="6.5" y="88" extent="1-16" drill="0.3048"/>
@@ -1643,7 +1647,6 @@ design rules under a new name.</description>
 <vertex x="28.5" y="53.5"/>
 <vertex x="28.5" y="65.5"/>
 </polygon>
-<wire x1="57.73" y1="72.955" x2="37.54" y2="69.79" width="0" layer="19" extent="1-1"/>
 <via x="13" y="66.5" extent="1-16" drill="0.3048"/>
 <via x="26.5" y="66.5" extent="1-16" drill="0.3048"/>
 <via x="25.5" y="66.5" extent="1-16" drill="0.3048"/>
@@ -1667,6 +1670,17 @@ design rules under a new name.</description>
 <via x="13" y="68" extent="1-16" drill="0.3048"/>
 <via x="11" y="68" extent="1-16" drill="0.3048"/>
 <via x="4.5" y="71.5" extent="1-16" drill="0.3048"/>
+<via x="69" y="84" extent="1-16" drill="0.3048"/>
+<via x="85.5" y="67.5" extent="1-16" drill="0.3048"/>
+<via x="86.5" y="68" extent="1-16" drill="0.3048"/>
+<via x="87" y="69" extent="1-16" drill="0.3048"/>
+<via x="88" y="68" extent="1-16" drill="0.3048"/>
+<via x="87.5" y="67" extent="1-16" drill="0.3048"/>
+<via x="86.5" y="66.5" extent="1-16" drill="0.3048"/>
+<via x="87.5" y="65.5" extent="1-16" drill="0.3048"/>
+<via x="88.5" y="66" extent="1-16" drill="0.3048"/>
+<via x="89" y="67" extent="1-16" drill="0.3048"/>
+<wire x1="33" y1="42.175" x2="36.5" y2="62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VBUS">
 <contactref element="J1" pad="VCC"/>
