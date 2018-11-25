@@ -7608,6 +7608,7 @@ GND
 </text>
 <wire x1="231.14" y1="71.12" x2="3.81" y2="71.12" width="0.0762" layer="94" style="shortdash"/>
 <text x="344.17" y="20.32" size="2.54" layer="94">vfd tube drive board</text>
+<text x="344.17" y="15.24" size="2.54" layer="94">desgined by Kinoshita</text>
 </plain>
 <instances>
 <instance part="R3" gate="G$1" x="210.82" y="241.3" smashed="yes" rot="R90">
@@ -7988,7 +7989,6 @@ GND
 <attribute name="VALUE" x="210.185" y="154.305" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
-<attribute name="DRAWING_NAME" x="344.17" y="15.24" size="2.54" layer="94"/>
 <attribute name="LAST_DATE_TIME" x="344.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="357.505" y="5.08" size="2.54" layer="94"/>
 </instance>

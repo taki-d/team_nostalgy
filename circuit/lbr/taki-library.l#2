@@ -12808,6 +12808,7 @@ Source: Epson Toyocom FA-20H.pdf</description>
 <wire x1="0.25" y1="-0.75" x2="0.25" y2="5.25" width="0.127" layer="21"/>
 <text x="-0.5" y="6.5" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.5" y="-3" size="1.27" layer="27">&gt;VALUE</text>
+<circle x="3.25" y="2.25" radius="1.75" width="0.127" layer="21"/>
 </package>
 </packages>
 <packages3d>
