@@ -8,16 +8,25 @@
 #include "RTClib.h"
 RTC_DS3231 rtc;
 
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME280.h>
+Adafruit_BME280 bme;
+
 // Timer Interrupt setting
 hw_timer_t * timer = NULL;
 
 volatile SemaphoreHandle_t timerSemaphore;
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
 
-const char* ssid = "***************";
-const char* pass = "***************";
+const char* ssid = "hoggehoge";
+const char* pass = "hugahuga";
 
 const int8_t timezone = 9;
+unsigned int dpmode = 0;
+
+#define SW3 27
+#define SW4 14
+#define SW5 12
 
 volatile bool anode_signal_pattern[8][3] = {
   {0,0,0},
@@ -30,7 +39,7 @@ volatile bool anode_signal_pattern[8][3] = {
   {1,1,1}
 };
 
-volatile char num_signal_pattern[10][2] = {
+volatile char num_signal_pattern[11][2] = {
   {0b00000000, 0b10000000}, // 0
   {0b00000100, 0b00000000}, // 1
   {0b00001000, 0b00000000}, // 2
@@ -41,6 +50,7 @@ volatile char num_signal_pattern[10][2] = {
   {0b00000000, 0b00010000}, // 7
   {0b00000000, 0b00100000}, // 8
   {0b00000000, 0b01000000}, // 9
+  {0b00000000, 0b00000000}, // _
 };
 
 // left dot
@@ -109,16 +119,71 @@ void setDisplay(double num){
   
 }
 
-void setDisplay(DateTime now){
-  memcpy(display_pattern[0], (void*)num_signal_pattern[now.hour()/10], 2);
+void setDisplayTime(DateTime now){
+  memcpy(display_pattern[0], (void*)num_signal_pattern[now.hour()%100/10], 2);
   memcpy(display_pattern[1], (void*)num_signal_pattern[now.hour()%10], 2);
   memcpy(display_pattern[2], (void*)dot_signal_pattern[2], 2);
-  memcpy(display_pattern[3], (void*)num_signal_pattern[now.minute()/10], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[now.minute()%100/10], 2);
   memcpy(display_pattern[4], (void*)num_signal_pattern[now.minute()%10], 2);
   memcpy(display_pattern[5], (void*)dot_signal_pattern[2], 2);
-  memcpy(display_pattern[6], (void*)num_signal_pattern[now.second()/10], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[now.second()%100/10], 2);
   memcpy(display_pattern[7], (void*)num_signal_pattern[now.second()%10], 2);
 
+}
+
+void setDisplayDate(DateTime now){
+  memcpy(display_pattern[0], (void*)num_signal_pattern[now.year()%100/10], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[now.year()%10], 2);
+  memcpy(display_pattern[2], (void*)dot_signal_pattern[2], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[now.month()%100/10], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[now.month()%10], 2);
+  memcpy(display_pattern[5], (void*)dot_signal_pattern[2], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[now.day()%100/10], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[now.day()%10], 2);
+
+}
+
+void setDisplayThermo(){
+  float temperature = bme.readTemperature();
+  float hubity = bme.readHumidity();
+  
+  memcpy(display_pattern[0], (void*)num_signal_pattern[(int)temperature%100/10], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[(int)temperature%10/1], 2);
+  memcpy(display_pattern[2], (void*)num_signal_pattern[(int)round(temperature*10)%10], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[(int)hubity%100/10], 2);
+  memcpy(display_pattern[5], (void*)num_signal_pattern[(int)hubity%10/1], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[(int)round(hubity*10)%10], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[10], 2);
+
+  display_pattern[2][0] |= dot_signal_pattern[1][0]; 
+  display_pattern[6][0] |= dot_signal_pattern[1][0]; 
+
+}
+
+void setDisplayPressure(){
+  float pressure = bme.readPressure();
+  
+  memcpy(display_pattern[0], (void*)num_signal_pattern[(int)pressure%10000/1000], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[(int)pressure%1000/100], 2);
+  memcpy(display_pattern[2], (void*)num_signal_pattern[(int)pressure%100/10], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[(int)pressure%10/1], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[(int)round(pressure*10)%10], 2);
+  memcpy(display_pattern[5], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[10], 2);
+
+  display_pattern[4][0] |= dot_signal_pattern[1][0];
+
+}
+
+void adjustByNTP(){
+  configTzTime("JST-9", "ntp.nict.jp", "time.google.com", "ntp.jst.mfeed.ad.jp");
+  struct tm timeinfo;
+  if (!getLocalTime(&timeinfo)) {
+    Serial.println("Failed to obtain time");
+  }
+  rtc.adjust(DateTime(time(NULL))+TimeSpan(0, timezone, 0, 0));
 }
 
 void setup() {
@@ -133,8 +198,26 @@ void setup() {
   digitalWrite(16,HIGH);
   digitalWrite(4,HIGH);
 
+  //button setting
+  pinMode(SW3,INPUT);
+  pinMode(SW4,INPUT);
+  pinMode(SW5,INPUT);
+
   serial0.begin(115200);
   gps_serial.begin(9600, SERIAL_8N1, 2, 15);
+
+  serial0.printf("Connecting to %s ", ssid);
+  WiFi.begin(ssid, pass);
+  unsigned long time = millis();
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    serial0.print(".");
+    if(millis()-time>30000){
+      serial0.print("Can't connect Wi-Fi");
+      break;
+    }
+  }
+  serial0.println(" CONNECTED");
 
   //RTCのあれこれ
   if (! rtc.begin()) {
@@ -142,22 +225,13 @@ void setup() {
     while (1);
   }
 
-  Serial.printf("Connecting to %s ", ssid);
-  WiFi.begin(ssid, pass);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+  //bmeのあれこれ 
+  if (!bme.begin()) {
+    serial0.println("Could not find a valid BME280 sensor, check wiring!");
+    while (1);
   }
-  Serial.println(" CONNECTED");
-  configTzTime("JST-9", "ntp.nict.jp", "time.google.com", "ntp.jst.mfeed.ad.jp");
-
-  time_t now;
-  struct tm timeinfo;
-  if (!getLocalTime(&timeinfo)) {
-    Serial.println("Failed to obtain time");
-  }
-  time(&now);
-  rtc.adjust(DateTime(now)+TimeSpan(0, timezone, 0, 0));
+  
+  adjustByNTP();
   
   // Create semaphore to inform us when the timer has fired
   timerSemaphore = xSemaphoreCreateBinary();
@@ -178,6 +252,29 @@ void setup() {
 }
 
 void loop() {
- DateTime now = rtc.now();
- setDisplay(now);
+  if(!digitalRead(SW3)){
+    while(!digitalRead(SW3));
+    dpmode++;
+    if(dpmode>3) dpmode = 0;
+  }
+
+  DateTime now = rtc.now();
+  switch(dpmode){
+    case 0:
+      setDisplayTime(now);
+      break;
+    case 1:
+      setDisplayDate(now);
+      break;
+    case 2:
+      setDisplayThermo();
+      delay(100);
+      break;
+    case 3:
+      setDisplayPressure();
+      delay(100);
+      break;
+    default:
+      break; 
+  }
 }
