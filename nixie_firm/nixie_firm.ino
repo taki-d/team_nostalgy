@@ -24,6 +24,8 @@ const char* pass = "fugapassword";
 const int8_t timezone = 9;
 unsigned int dpmode = 0;
 
+WiFiServer server(80);
+
 #define SW3 27
 #define SW4 14
 #define SW5 12
@@ -77,6 +79,9 @@ char display_pattern[8][2] = {
   {0b00000000, 0b01000000}, // nix6
   {0b00000100, 0b00000000}, // nix7
 };
+
+String html ="<!DOCTYPE html> <html lang=\"ja\"> <head> <meta charset=\"utf-8\"> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Bootstrap Sample</title> <!-- BootstrapのCSS読み込み --> <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\"> <!-- jQuery読み込み --> <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script> <!-- PopperのJS読み込み --> <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\"></script> <!-- BootstrapのJS読み込み --> <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script> </head> <body> <header style=\"background-color:white\"></header> <div class=\"container-fluid\"> <div class=\"row\"> <div class=\"container\"> <h3>ボタンのモード設定</h3> <table class=\"table table-bordered\"> <thead> <tr> <th>ボタンの名前</th> <th>モード</th> </tr> </thead> <tbody> <tr> <th scope=\"row\">func1</th> <td> <select name=\"mode\"> <option id=\"date\">日付</option> <option id=\"clock\">時刻</option> <option id=\"kiatu\">気圧</option> <option id=\"kionn\">気温、湿度</option> <option id=\"GPS\">緯度経度</option> <option id=\"API\">APIモード</option> <option id=\"timer\">タイマー</option> </select> </td> </tr> <tr> <th scope=\"row\">func2</th> <td> <select name=\"mode\"> <option id=\"date\">日付</option> <option id=\"clock\">時刻</option> <option id=\"kiatu\">気圧</option> <option id=\"kionn\">気温、湿度</option> <option id=\"GPS\">緯度経度</option> <option id=\"API\">APIモード</option> <option id=\"timer\">タイマー</option> </select> </td> </tr> </tbody> </table> </div> <br> <div class=\"container\"><br> <h3>Wifi設定</h3> <p>現在のIPアドレスは</p> <!-- Wifi情報をとってくる --> <p>現在接続中のWifiは</p> <!-- Wifi情報をとってくる --> <br> <form> <div class=\"form-group\"> <h3>NTPアドレス</h3> <input type=\"email\" class=\"form-control\" id=\"exampleInputaddr\" placeholder=\"example\"> </div></form> <br> <div class=\"checkbox\"> <h3>有効にするモード</h3> <label> <input type=\"checkbox\" id=\"date2\" name=\"date2\"> 日付<br> <input type=\"checkbox\" id=\"clock2\" name=\"clock2\"> 時刻<br> <input type=\"checkbox\" id=\"kiatu2\" name=\"kiatu\" > 気圧<br> <input type=\"checkbox\" id=\"kionn2\" name=\"kionn\" > 気温、湿度<br> <input type=\"checkbox\" id=\"GPS2\" name=\"GPS\"> 緯度、経度<br> <input type=\"checkbox\" id=\"API2\" name=\"API\"> APIモード<br> <input type=\"checkbox\" id=\"timer2\" name=\"timer\"> タイマー<br> </label> </div> <button type=\"button\" class=\"btn btn-primary\">送信</button> </div> </div> </div> <footer style=\"background-color:white\"></footer> </body> </html>";
+
 
 HardwareSerial serial0(0);
 HardwareSerial gps_serial(2);
@@ -136,17 +141,20 @@ void setup() {
   bool isWiFiConnected = true;
 
   serial0.printf("Connecting to %s ", ssid);
+  WiFi.disconnect(true);
   WiFi.begin(ssid, pass);
   unsigned long time = millis();
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    delay(100);
     serial0.print(".");
+    /*
     if(millis()-time>10000){
       serial0.print("Can't connect Wi-Fi");
       WiFi.disconnect(true);
       isWiFiConnected = false;
       break;
     }
+    */
   }
   serial0.println(" CONNECTED");
   
@@ -173,6 +181,7 @@ void setup() {
   bme280.setMode(i2c_addr, osrs_t, osrs_p, osrs_h, bme280mode, t_sb, filter, spi3w_en);
   bme280.readTrim();
   
+  server.begin();
 
   
   // Create semaphore to inform us when the timer has fired
@@ -245,10 +254,6 @@ void setDisplayPressure(double pressure){
   display_pattern[6][0] |= dot_signal_pattern[1][0];
 }
 
-void setRandomNum(){
-  memcpy(display_pattern[0],)
-}
-
 double temp_act, press_act, hum_act; //最終的に表示される値を入れる変数
 
 void loop() {
@@ -278,4 +283,36 @@ void loop() {
     default:
       break; 
   }
+
+  WiFiClient client = server.available();
+
+  if(client){
+    serial0.println("new client");
+    String currentLine = "";
+
+    while(client.connected()){
+      if(client.available()){
+        char c = client.read();
+
+        if(c == '\n'){
+          // requestに対する処理の記述
+          if(currentLine.length() == 0){
+            client.println("HTTP/1.1 200 OK");
+            client.println("Content-type:text/html");
+            client.println();
+            client.print(html);
+            client.println();
+            break;
+          } else {
+            currentLine = "";
+          }
+
+        }else if(c != '\r'){
+          currentLine += c;
+        }
+      }
+    }
+  }
+
+  client.stop();
 }
