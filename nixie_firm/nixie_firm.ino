@@ -1,16 +1,16 @@
-#include <TinyGPS.h>
-
 #include <Time.h>
 #include <TimeLib.h>
 #include <WiFi.h>
-
 #include <Wire.h>
+
 #include "RTClib.h"
 RTC_DS3231 rtc;
 
-#include <Adafruit_Sensor.h>
-#include <Adafruit_BME280.h>
-Adafruit_BME280 bme;
+#include <SSCI_BME280.h>
+SSCI_BME280 bme280;
+uint8_t i2c_addr = 0x77; 
+
+#include <TinyGPS.h>
 
 // Timer Interrupt setting
 hw_timer_t * timer = NULL;
@@ -18,8 +18,8 @@ hw_timer_t * timer = NULL;
 volatile SemaphoreHandle_t timerSemaphore;
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
 
-const char* ssid = "hoggehoge";
-const char* pass = "hugahuga";
+const char* ssid = "hogessid";
+const char* pass = "fugapassword";
 
 const int8_t timezone = 9;
 unsigned int dpmode = 0;
@@ -86,7 +86,6 @@ void IRAM_ATTR onTimer(){
   // Increment the counter and set the time of ISR
   portENTER_CRITICAL_ISR(&timerMux);
 
-  /*** ここにタイマー割り込みで実行するコードを記載 ***/
   digitalWrite(17,anode_signal_pattern[cycleNum][2]);
   digitalWrite(16,anode_signal_pattern[cycleNum][1]);
   digitalWrite(4,anode_signal_pattern[cycleNum][0]);
@@ -98,83 +97,11 @@ void IRAM_ATTR onTimer(){
   
   cycleNum++;
   if(cycleNum > 7) cycleNum = 0;
-
-  /*** ここまで ***/
   
   portEXIT_CRITICAL_ISR(&timerMux);
   // Give a semaphore that we can check in the loop
   xSemaphoreGiveFromISR(timerSemaphore, NULL);
   // It is safe to use digitalRead/Write here if you want to toggle an output
-}
-
-void setDisplay(char *num, char *dot){
-    
-}
-
-void setDisplay(int num, char *dot){
-
-}
-
-void setDisplay(double num){
-  
-}
-
-void setDisplayTime(DateTime now){
-  memcpy(display_pattern[0], (void*)num_signal_pattern[now.hour()%100/10], 2);
-  memcpy(display_pattern[1], (void*)num_signal_pattern[now.hour()%10], 2);
-  memcpy(display_pattern[2], (void*)dot_signal_pattern[2], 2);
-  memcpy(display_pattern[3], (void*)num_signal_pattern[now.minute()%100/10], 2);
-  memcpy(display_pattern[4], (void*)num_signal_pattern[now.minute()%10], 2);
-  memcpy(display_pattern[5], (void*)dot_signal_pattern[2], 2);
-  memcpy(display_pattern[6], (void*)num_signal_pattern[now.second()%100/10], 2);
-  memcpy(display_pattern[7], (void*)num_signal_pattern[now.second()%10], 2);
-
-}
-
-void setDisplayDate(DateTime now){
-  memcpy(display_pattern[0], (void*)num_signal_pattern[now.year()%100/10], 2);
-  memcpy(display_pattern[1], (void*)num_signal_pattern[now.year()%10], 2);
-  memcpy(display_pattern[2], (void*)dot_signal_pattern[2], 2);
-  memcpy(display_pattern[3], (void*)num_signal_pattern[now.month()%100/10], 2);
-  memcpy(display_pattern[4], (void*)num_signal_pattern[now.month()%10], 2);
-  memcpy(display_pattern[5], (void*)dot_signal_pattern[2], 2);
-  memcpy(display_pattern[6], (void*)num_signal_pattern[now.day()%100/10], 2);
-  memcpy(display_pattern[7], (void*)num_signal_pattern[now.day()%10], 2);
-
-}
-
-void setDisplayThermo(){
-  float temperature = bme.readTemperature();
-  float hubity = bme.readHumidity();
-  
-  memcpy(display_pattern[0], (void*)num_signal_pattern[(int)temperature%100/10], 2);
-  memcpy(display_pattern[1], (void*)num_signal_pattern[(int)temperature%10/1], 2);
-  memcpy(display_pattern[2], (void*)num_signal_pattern[(int)round(temperature*10)%10], 2);
-  memcpy(display_pattern[3], (void*)num_signal_pattern[10], 2);
-  memcpy(display_pattern[4], (void*)num_signal_pattern[(int)hubity%100/10], 2);
-  memcpy(display_pattern[5], (void*)num_signal_pattern[(int)hubity%10/1], 2);
-  memcpy(display_pattern[6], (void*)num_signal_pattern[(int)round(hubity*10)%10], 2);
-  memcpy(display_pattern[7], (void*)num_signal_pattern[10], 2);
-
-  display_pattern[2][0] |= dot_signal_pattern[1][0]; 
-  display_pattern[6][0] |= dot_signal_pattern[1][0]; 
-
-}
-
-void setDisplayPressure(){
-  float pressure = bme.readPressure();
-  
-  memcpy(display_pattern[0], (void*)num_signal_pattern[(int)pressure%10000/1000], 2);
-  memcpy(display_pattern[1], (void*)num_signal_pattern[(int)pressure%1000/100], 2);
-  memcpy(display_pattern[2], (void*)num_signal_pattern[(int)pressure%100/10], 2);
-  memcpy(display_pattern[3], (void*)num_signal_pattern[(int)pressure%10/1], 2);
-  memcpy(display_pattern[4], (void*)num_signal_pattern[(int)round(pressure*10)%10], 2);
-  memcpy(display_pattern[5], (void*)num_signal_pattern[10], 2);
-  memcpy(display_pattern[6], (void*)num_signal_pattern[10], 2);
-  memcpy(display_pattern[7], (void*)num_signal_pattern[10], 2);
-
-  display_pattern[4][0] |= dot_signal_pattern[1][0];
-
 }
 
 void adjustByNTP(){
@@ -206,32 +133,47 @@ void setup() {
   serial0.begin(115200);
   gps_serial.begin(9600, SERIAL_8N1, 2, 15);
 
+  bool isWiFiConnected = true;
+
   serial0.printf("Connecting to %s ", ssid);
   WiFi.begin(ssid, pass);
   unsigned long time = millis();
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     serial0.print(".");
-    if(millis()-time>30000){
+    if(millis()-time>10000){
       serial0.print("Can't connect Wi-Fi");
+      WiFi.disconnect(true);
+      isWiFiConnected = false;
       break;
     }
   }
   serial0.println(" CONNECTED");
+  
 
   //RTCのあれこれ
   if (! rtc.begin()) {
     serial0.println("Couldn't find RTC");
     while (1);
   }
-
-  //bmeのあれこれ 
-  if (!bme.begin()) {
-    serial0.println("Could not find a valid BME280 sensor, check wiring!");
-    while (1);
-  }
   
-  adjustByNTP();
+  if(isWiFiConnected){
+    adjustByNTP();
+  }
+
+  //bme280 set up
+  uint8_t osrs_t = 1;             //Temperature oversampling x 1
+  uint8_t osrs_p = 1;             //Pressure oversampling x 1
+  uint8_t osrs_h = 1;             //Humidity oversampling x 1
+  uint8_t bme280mode = 3;         //Normal mode
+  uint8_t t_sb = 5;               //Tstandby 1000ms
+  uint8_t filter = 0;             //Filter off
+  uint8_t spi3w_en = 0;           //3-wire SPI Disable
+
+  bme280.setMode(i2c_addr, osrs_t, osrs_p, osrs_h, bme280mode, t_sb, filter, spi3w_en);
+  bme280.readTrim();
+  
+
   
   // Create semaphore to inform us when the timer has fired
   timerSemaphore = xSemaphoreCreateBinary();
@@ -251,6 +193,64 @@ void setup() {
   timerAlarmEnable(timer);
 }
 
+void setDisplayTime(DateTime now){
+  memcpy(display_pattern[0], (void*)num_signal_pattern[now.hour()%100/10], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[now.hour()%10], 2);
+  memcpy(display_pattern[2], (void*)dot_signal_pattern[2], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[now.minute()%100/10], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[now.minute()%10], 2);
+  memcpy(display_pattern[5], (void*)dot_signal_pattern[2], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[now.second()%100/10], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[now.second()%10], 2);
+
+}
+
+void setDisplayDate(DateTime now){
+  memcpy(display_pattern[0], (void*)num_signal_pattern[now.year()%100/10], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[now.year()%10], 2);
+  memcpy(display_pattern[2], (void*)dot_signal_pattern[2], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[now.month()%100/10], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[now.month()%10], 2);
+  memcpy(display_pattern[5], (void*)dot_signal_pattern[2], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[now.day()%100/10], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[now.day()%10], 2);
+
+}
+
+void setDisplayThermoHumidity(double temperature, double humidity){
+  
+  memcpy(display_pattern[0], (void*)num_signal_pattern[(int)temperature%100/10], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[(int)temperature%10/1], 2);
+  memcpy(display_pattern[2], (void*)num_signal_pattern[(int)round(temperature*10)%10], 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[5], (void*)num_signal_pattern[(int)humidity%100/10], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[(int)humidity%10/1], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[(int)round(humidity*10)%10], 2);
+
+  display_pattern[2][0] |= dot_signal_pattern[1][0]; 
+  display_pattern[7][0] |= dot_signal_pattern[1][0]; 
+}
+
+void setDisplayPressure(double pressure){
+  memcpy(display_pattern[0], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[1], (void*)num_signal_pattern[10], 2);
+  memcpy(display_pattern[2], ((int)pressure%10000/1000 == 0 ? (void*)num_signal_pattern[10] : (void*)num_signal_pattern[(int)pressure%10000/1000]), 2);
+  memcpy(display_pattern[3], (void*)num_signal_pattern[(int)pressure%1000/100], 2);
+  memcpy(display_pattern[4], (void*)num_signal_pattern[(int)pressure%100/10], 2);
+  memcpy(display_pattern[5], (void*)num_signal_pattern[(int)pressure%10/1], 2);
+  memcpy(display_pattern[6], (void*)num_signal_pattern[(int)(pressure*10)%10], 2);
+  memcpy(display_pattern[7], (void*)num_signal_pattern[(int)(pressure*100)%10], 2);
+
+  display_pattern[6][0] |= dot_signal_pattern[1][0];
+}
+
+void setRandomNum(){
+  memcpy(display_pattern[0],)
+}
+
+double temp_act, press_act, hum_act; //最終的に表示される値を入れる変数
+
 void loop() {
   if(!digitalRead(SW3)){
     while(!digitalRead(SW3));
@@ -259,6 +259,7 @@ void loop() {
   }
 
   DateTime now = rtc.now();
+  bme280.readData(&temp_act, &press_act, &hum_act);
   switch(dpmode){
     case 0:
       setDisplayTime(now);
@@ -267,11 +268,11 @@ void loop() {
       setDisplayDate(now);
       break;
     case 2:
-      setDisplayThermo();
+      setDisplayThermoHumidity(temp_act, hum_act);
       delay(100);
       break;
     case 3:
-      setDisplayPressure();
+      setDisplayPressure(press_act);
       delay(100);
       break;
     default:
