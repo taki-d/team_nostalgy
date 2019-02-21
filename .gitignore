@@ -1,7 +1,9 @@
 stl/
 ~$*
+Thumbs.db
+css/
+js/
 
 # jetbrain
 */.idea/*
-
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- PopperのJS読み込み -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+　 //ここにjavascriptを書きます。
+        function connectpulldown( textid, ischecked ) {
+   if( ischecked == true ) {
+      // チェックが入っていたら有効化
+      document.getElementById(textid).disabled = false;
+   }
+   else {
+      // チェックが入っていなかったら無効化
+      document.getElementById(textid).disabled = true;
+   }
+}    
+    </script>
+  </head>
+  <body>
+<header style="background-color:white"></header>
+<div class="container-fluid">
+  <div class="row">
+      <div class="container">  
+          
+<h3>ボタンのモード設定</h3>
+   
+  <table class="table table-bordered">
+      
+    <thead>
+      <tr>
+        <th>ボタンの名前</th>
+        <th>モード</th>
+         </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">func1</th>
+          <td>
+                <select name="mode">
+<option id="date">日付</option>
+<option id="clock">時刻</option>
+<option id="kiatu">気圧</option>
+<option id="kionn">気温、湿度</option>
+<option id="GPS">緯度経度</option>
+<option id="API">APIモード</option>
+<option id="timer">タイマー</option>
+              </select> 
+          </td>
+      </tr>
+      <tr>
+        <th scope="row">func2</th>
+          <td>
+              <select name="mode">
+<option id="date">日付</option>
+<option id="clock">時刻</option>
+<option id="kiatu">気圧</option>
+<option id="kionn">気温、湿度</option>
+<option id="GPS">緯度経度</option>
+<option id="API">APIモード</option>
+<option id="timer">タイマー</option>
+              </select>  
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>    
+ <br>
+      <div class="container"><br>
+<h3>Wifi設定</h3>
+          <!-- Wifi情報をとってくる -->
+          <p>現在のIPアドレスは</p>
+ <br>         
+
+<form>
+  <div class="form-group">
+<h3>NTPアドレス</h3>
+      <input type="email" class="form-control" id="exampleInputaddr" placeholder="example">
+  </div></form>
+         <br>
+           <div class="checkbox">
+<h3>有効にするモード</h3>               
+    <label>
+      <input type="checkbox" id="date2" name="date" value="on" onclick="connectpulldown(date,this.checked);"> 日付<br>
+      <input type="checkbox" id="clock2" name="clock" value="on" onclick="connectpulldown(clock,this.checked);"> 時刻<br>
+      <input type="checkbox" id="kiatu2" name="kiatu" onclick="connectpulldown(kiatu,this.checked);"> 気圧<br>
+      <input type="checkbox" id="kionn2" name="kionn" onclick="connectpulldown(kionn,checked)"> 気温、湿度<br>
+      <input type="checkbox" id="GPS2" name="GPS"> 緯度、経度<br>
+      <input type="checkbox" id="API2" name="API"> APIモード<br>
+      <input type="checkbox" id="timer2" name="timer"> タイマー<br>
+    </label>
+  </div> <button type="button" class="btn btn-primary">送信</button>
+      </div>
+      
+    </div>
+</div>
+<footer style="background-color:white"></footer>  
+    </body>
+</html>
