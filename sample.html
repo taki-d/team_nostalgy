@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap Sample</title>
     <!-- BootstrapのCSS読み込み -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- PopperのJS読み込み -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <!-- BootstrapのJS読み込み -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
 <header style="background-color:white"></header>
@@ -65,8 +65,9 @@
  <br>
       <div class="container"><br>
 <h3>Wifi設定</h3>
-          <!-- Wifi情報をとってくる -->
-          <p>現在のIPアドレスは</p>
+
+          <p>現在のIPアドレスは</p>  <!-- Wifi情報をとってくる -->
+          <p>現在接続中のWifiは</p>  <!-- Wifi情報をとってくる -->
  <br>         
 
 <form>
@@ -78,10 +79,10 @@
            <div class="checkbox">
 <h3>有効にするモード</h3>               
     <label>
-      <input type="checkbox" id="date2" name="date" value="on" onclick="connectpulldown(date,this.checked);"> 日付<br>
-      <input type="checkbox" id="clock2" name="clock" value="on" onclick="connectpulldown(clock,this.checked);"> 時刻<br>
-      <input type="checkbox" id="kiatu2" name="kiatu" onclick="connectpulldown(kiatu,this.checked);"> 気圧<br>
-      <input type="checkbox" id="kionn2" name="kionn" onclick="connectpulldown(kionn,checked)"> 気温、湿度<br>
+      <input type="checkbox" id="date2" name="date2"> 日付<br>
+      <input type="checkbox" id="clock2" name="clock2"> 時刻<br>
+      <input type="checkbox" id="kiatu2" name="kiatu" > 気圧<br>
+      <input type="checkbox" id="kionn2" name="kionn" > 気温、湿度<br>
       <input type="checkbox" id="GPS2" name="GPS"> 緯度、経度<br>
       <input type="checkbox" id="API2" name="API"> APIモード<br>
       <input type="checkbox" id="timer2" name="timer"> タイマー<br>
