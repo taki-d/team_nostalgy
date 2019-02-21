@@ -3,6 +3,10 @@
 #include <WiFi.h>
 #include <Wire.h>
 
+#include <WebServer.h>
+#include <DNSServer.h>
+#include <WiFiManager.h> 
+
 #include "RTClib.h"
 RTC_DS3231 rtc;
 
@@ -135,18 +139,14 @@ void setup() {
 
   bool isWiFiConnected = true;
 
-  serial0.printf("Connecting to %s ", ssid);
-  WiFi.begin(ssid, pass);
-  unsigned long time = millis();
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    serial0.print(".");
-    if(millis()-time>10000){
-      serial0.print("Can't connect Wi-Fi");
-      WiFi.disconnect(true);
-      isWiFiConnected = false;
-      break;
-    }
+  // wi-fi設定
+  WiFiManager wifiManager;
+  if (!wifiManager.startConfigPortal("NixieAP")) {
+    Serial.println("failed to connect and hit timeout");
+    delay(3000);
+    //reset and try again, or maybe put it to deep sleep
+    ESP.restart();
+    delay(5000);
   }
   serial0.println(" CONNECTED");
   
@@ -243,10 +243,6 @@ void setDisplayPressure(double pressure){
   memcpy(display_pattern[7], (void*)num_signal_pattern[(int)(pressure*100)%10], 2);
 
   display_pattern[6][0] |= dot_signal_pattern[1][0];
-}
-
-void setRandomNum(){
-  memcpy(display_pattern[0],)
 }
 
 double temp_act, press_act, hum_act; //最終的に表示される値を入れる変数
