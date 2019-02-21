@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head >
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Sample</title>
+    <title>ESP32 setting</title>
     <!-- BootstrapのCSS読み込み -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery読み込み -->
@@ -15,10 +15,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-<header style="background-color:white"></header>
+<header class="fixed-top" style="background-color:white">
+    <div class="bs-component">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-fixed-top ">
+              <div class="container">
+            <a class="navbar-brand" href="#">ESP32 Setting</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.google.co.jp/" target="_blank">Help </a>
+                </li>
+              </ul>
+               </div>
+              </div>      
+          </nav>
+        </div>
+</header>
 <div class="container-fluid">
   <div class="row">
-      <div class="container">  
+      <div class="container">  <br><br><br>
           
 <h3>ボタンのモード設定</h3>
    
@@ -89,9 +110,12 @@
     </label>
   </div> <button type="button" class="btn btn-primary">送信</button>
       </div>
-      
+     <!-- <img src="https://img.gifmagazine.net/gifmagazine/images/10353/original.gif" alt="しょぼん" title="syobon">
+      <img src="https://img.gifmagazine.net/gifmagazine/images/10353/original.gif" alt="しょぼん" title="syobon">
+      <img src="https://img.gifmagazine.net/gifmagazine/images/10353/original.gif" alt="しょぼん" title="syobon">
+      <img src="https://img.gifmagazine.net/gifmagazine/images/10353/original.gif" alt="しょぼん" title="syobon"> -->
     </div>
 </div>
-<footer style="background-color:white"></footer>  
+<footer style="background-color:white" class="fixed-bottom"></footer>  
     </body>
 </html>
