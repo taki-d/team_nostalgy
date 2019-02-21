@@ -141,13 +141,9 @@ void setup() {
 
   // wi-fi設定
   WiFiManager wifiManager;
-  if (!wifiManager.startConfigPortal("NixieAP")) {
-    Serial.println("failed to connect and hit timeout");
-    delay(3000);
-    //reset and try again, or maybe put it to deep sleep
-    ESP.restart();
-    delay(5000);
-  }
+  
+  wifiManager.autoConnect("NixieAP");
+  
   serial0.println(" CONNECTED");
   
 
