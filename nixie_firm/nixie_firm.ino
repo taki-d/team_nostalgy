@@ -221,7 +221,29 @@ void setup() {
           memcpy(display_pattern[i], (void*)num_signal_pattern[param[i] - '0'], 2);
       
         }
-        serial0.println(atoi(&param[1]));
+      }
+
+      if(p->name() == "dot"){
+        String param = p->value();
+
+        for(char i = 0; i < 8; ++i){
+          display_pattern[i][0] &= 0b11111100;
+
+          switch(param[i] - '0'){
+            case 0:
+              display_pattern[i][0] |= dot_signal_pattern[0][0];
+              break;
+            case 1:
+              display_pattern[i][0] |= dot_signal_pattern[1][0];
+              break;
+            case 2:
+              display_pattern[i][0] |= dot_signal_pattern[2][0];
+              break;
+            case 3:
+              display_pattern[i][0] |= dot_signal_pattern[3][0];
+              break;
+          }
+        }
       }
 
       if(p->name() == "mode"){
@@ -229,7 +251,7 @@ void setup() {
       }
     }
  
-    request->send(200, "plain/text", "message received");
+    request->send(200, "text/html", "<p>message received</p>");
   });
 
   server.on("/", HTTP_GET, [&](AsyncWebServerRequest *request){
@@ -300,7 +322,6 @@ void setup() {
     if(flag){
       for(char i = 0; i < 10; ++i){
         func_enable[i] = temp_func_enable[i];
-        serial0.println(func_enable[i]);
       }
     }
 
@@ -423,7 +444,7 @@ void loop() {
       delay(100);
       break;
     case 4: // API Mode
-      delay(100);
+      delay(10);
       break;
 
     default:
