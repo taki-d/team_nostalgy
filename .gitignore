@@ -4,4 +4,4 @@ stl/
 # jetbrain
 */.idea/*
 
-
+*/node_modules/*

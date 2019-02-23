@@ -1,0 +1,14 @@
+{
+  "name": "dappunhome",
+  "version": "1.0.0",
+  "description": "sumizome0213",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "googlehome"
+  ],
+  "author": "",
+  "license": "MIT"
+}
