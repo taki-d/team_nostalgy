@@ -62,6 +62,19 @@ volatile char func_btn[2] = {
   0,
 };
 
+volatile bool func_enable[10] = {
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+};
+
 // left dot
 // 0b00000001
 
@@ -222,6 +235,20 @@ void setup() {
   server.on("/", HTTP_GET, [&](AsyncWebServerRequest *request){
     int params_num = request->params();
 
+    bool flag = false;
+    bool temp_func_enable[10] = {
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    };
+
     for(int i=0; i < params_num; ++i){
       AsyncWebParameter* p = request->getParam(i);
 
@@ -231,6 +258,49 @@ void setup() {
 
       if(p->name() == "func2"){
         func_btn[1] = p->value()[0] - '0';
+      }
+
+      if(p->name() == "clock"){
+        flag = true;
+        temp_func_enable[0] = true;
+      }
+
+      if(p->name() == "date"){
+        flag = true;
+        temp_func_enable[1] = true;
+      }
+
+      if(p->name() == "temp"){
+        flag = true;
+        temp_func_enable[2] = true;
+      }
+
+      if(p->name() == "pressure"){
+        flag = true;
+        temp_func_enable[3] = true;
+      }
+
+      if(p->name() == "api"){
+        flag = true;
+        temp_func_enable[4] = true;
+      }
+
+      if(p->name() == "gps"){
+        flag = true;
+        temp_func_enable[5] = true;
+      }
+
+      if(p->name() == "timer"){
+        flag = true;
+        temp_func_enable[6] = true;
+      }
+
+    }
+
+    if(flag){
+      for(char i = 0; i < 10; ++i){
+        func_enable[i] = temp_func_enable[i];
+        serial0.println(func_enable[i]);
       }
     }
 
@@ -315,6 +385,11 @@ void loop() {
   if(!digitalRead(SW3)){
     while(!digitalRead(SW3));
     dpmode++;
+
+    while(!func_enable[dpmode]){
+      dpmode++;
+    }
+
     if(dpmode>4) dpmode = 0;
   }
 
