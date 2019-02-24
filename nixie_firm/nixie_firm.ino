@@ -20,8 +20,8 @@ hw_timer_t * timer = NULL;
 volatile SemaphoreHandle_t timerSemaphore;
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
 
-const char* ssid = "hogessid";
-const char* pass = "fugapassword";
+const char* ssid = "WA-GN1";
+const char* pass = "zeroshinegi53";
 
 const int8_t timezone = 9;
 unsigned int dpmode = 0;
@@ -208,7 +208,7 @@ void setup() {
     for(int i=0;i<paramsNr;i++){
       AsyncWebParameter* p = request->getParam(i);
 
-      if(p->name() == "num"){
+      if(p->name() == "num" && dpmode == 4){
         String param = p->value();
 
         for(char i = 0; i < 8; i++){
@@ -223,7 +223,7 @@ void setup() {
         }
       }
 
-      if(p->name() == "dot"){
+      if(p->name() == "dot" && dpmode == 4){
         String param = p->value();
 
         for(char i = 0; i < 8; ++i){
