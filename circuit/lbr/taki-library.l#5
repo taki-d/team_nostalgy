@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="yes" active="yes"/>
@@ -15405,14 +15405,14 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <text x="-19.05" y="31.75" size="1.27" layer="95" ratio="11">&gt;NAME</text>
 <text x="-12.7" y="31.75" size="1.27" layer="96" ratio="11">&gt;VALUE</text>
 <pin name="PB5(SCK)" x="24.13" y="-29.21" length="middle" rot="R180"/>
-<pin name="PB7(XTAL2/TOSC2)" x="-24.13" y="6.35" length="middle"/>
-<pin name="PB6(XTAL1/TOSC1)" x="-24.13" y="11.43" length="middle"/>
-<pin name="GND@1" x="-24.13" y="-1.27" length="middle"/>
-<pin name="GND@2" x="-24.13" y="-3.81" length="middle"/>
-<pin name="VCC@1" x="-24.13" y="-6.35" length="middle"/>
-<pin name="VCC@2" x="-24.13" y="-8.89" length="middle"/>
-<pin name="GND" x="-24.13" y="24.13" length="middle"/>
-<pin name="AREF" x="-24.13" y="21.59" length="middle"/>
+<pin name="PB7(XTAL2/TOSC2)" x="-24.13" y="1.27" length="middle"/>
+<pin name="PB6(XTAL1/TOSC1)" x="-24.13" y="6.35" length="middle"/>
+<pin name="GND@1" x="-24.13" y="-24.13" length="middle"/>
+<pin name="GND@2" x="-24.13" y="-26.67" length="middle"/>
+<pin name="VCC@1" x="-24.13" y="24.13" length="middle"/>
+<pin name="VCC@2" x="-24.13" y="21.59" length="middle"/>
+<pin name="GND" x="-24.13" y="-21.59" length="middle"/>
+<pin name="AREF" x="-24.13" y="13.97" length="middle"/>
 <pin name="AVCC" x="-24.13" y="19.05" length="middle"/>
 <pin name="PB4(MISO)" x="24.13" y="-26.67" length="middle" rot="R180"/>
 <pin name="PB3(MOSI/OC2)" x="24.13" y="-24.13" length="middle" rot="R180"/>
