@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -4880,22 +4880,16 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0092.pdf</description>
 <smd name="B1" x="-3.4" y="-8" dx="0.23" dy="0.85" layer="1" rot="R180"/>
 <smd name="NC@1" x="-3.915" y="-8" dx="0.46" dy="0.85" layer="1" rot="R180"/>
 <smd name="NC@2" x="3.915" y="-8" dx="0.46" dy="0.85" layer="1" rot="R180"/>
-<pad name="B6" x="-0.4" y="-7.075" drill="0.4" diameter="0.6" rot="R180"/>
-<pad name="B7" x="0.4" y="-7.075" drill="0.4" diameter="0.6" rot="R180"/>
-<pad name="B8" x="1.2" y="-7.075" drill="0.4" diameter="0.6" rot="R180"/>
-<pad name="B5" x="-1.2" y="-7.075" drill="0.4" diameter="0.6" rot="R180"/>
-<pad name="B4" x="-2" y="-7.075" drill="0.4" diameter="0.6" rot="R180"/>
-<pad name="B9" x="2" y="-7.075" drill="0.4" diameter="0.6" rot="R180"/>
+<pad name="B6" x="-0.4" y="-7.075" drill="0.325" diameter="0.6" rot="R180"/>
+<pad name="B7" x="0.4" y="-7.075" drill="0.325" diameter="0.6" rot="R180"/>
+<pad name="B8" x="1.2" y="-7.075" drill="0.325" diameter="0.6" rot="R180"/>
+<pad name="B5" x="-1.2" y="-7.075" drill="0.325" diameter="0.6" rot="R180"/>
+<pad name="B4" x="-2" y="-7.075" drill="0.325" diameter="0.6" rot="R180"/>
+<pad name="B9" x="2" y="-7.075" drill="0.325" diameter="0.6" rot="R180"/>
 <pad name="SHIELD@2" x="-6.2" y="-7.575" drill="0.6" diameter="1.2" shape="long" rot="R270"/>
 <pad name="SHIELD@1" x="6.2" y="-7.575" drill="0.6" diameter="1.2" shape="long" rot="R270"/>
 <pad name="SHIELD@3" x="6.2" y="-2.525" drill="0.6" diameter="1.2" shape="long" rot="R270"/>
 <pad name="SHIELD@4" x="-6.2" y="-2.525" drill="0.6" diameter="1.2" shape="long" rot="R270"/>
-<polygon width="0.127" layer="39">
-<vertex x="4.8" y="-8.8"/>
-<vertex x="4.8" y="-6.8"/>
-<vertex x="-4.8" y="-6.8"/>
-<vertex x="-4.8" y="-8.8"/>
-</polygon>
 <wire x1="-6.5" y1="-3.1" x2="-6.5" y2="-1.9" width="0.127" layer="46"/>
 <wire x1="-6.5" y1="-1.9" x2="-6.2" y2="-1.6" width="0.127" layer="46" curve="-90"/>
 <wire x1="-6.2" y1="-1.6" x2="-5.9" y2="-1.9" width="0.127" layer="46" curve="-90"/>
@@ -4929,36 +4923,6 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0092.pdf</description>
 <wire x1="4.67" y1="0" x2="4.67" y2="-6.65" width="0" layer="46"/>
 <wire x1="4.67" y1="-6.65" x2="-4.67" y2="-6.65" width="0" layer="46"/>
 <wire x1="-4.67" y1="-6.65" x2="-4.67" y2="0" width="0" layer="46"/>
-<polygon width="0.127" layer="39">
-<vertex x="-4.67" y="0"/>
-<vertex x="4.67" y="0"/>
-<vertex x="4.67" y="-6.65"/>
-<vertex x="-4.67" y="-6.65"/>
-</polygon>
-<polygon width="0.127" layer="40">
-<vertex x="-4.67" y="0"/>
-<vertex x="4.67" y="0"/>
-<vertex x="4.67" y="-6.65"/>
-<vertex x="-4.67" y="-6.65"/>
-</polygon>
-<polygon width="0.127" layer="41">
-<vertex x="-4.67" y="0"/>
-<vertex x="4.67" y="0"/>
-<vertex x="4.67" y="-6.65"/>
-<vertex x="-4.67" y="-6.65"/>
-</polygon>
-<polygon width="0.127" layer="42">
-<vertex x="-4.67" y="0"/>
-<vertex x="4.67" y="0"/>
-<vertex x="4.67" y="-6.65"/>
-<vertex x="-4.67" y="-6.65"/>
-</polygon>
-<polygon width="0.127" layer="43">
-<vertex x="-4.67" y="0"/>
-<vertex x="4.67" y="0"/>
-<vertex x="4.67" y="-6.65"/>
-<vertex x="-4.67" y="-6.65"/>
-</polygon>
 </package>
 <package name="12401598E4#2A">
 <description>Amphenol 12401598E4#2A USB-C Receiptcle</description>
@@ -10579,6 +10543,9 @@ type RDH, grid 15 mm</description>
 <part name="J2" library="taki-library" deviceset="USB-C" device="-CX70M-24P1"/>
 <part name="P+4" library="taki-library" deviceset="+5V" device=""/>
 <part name="SUPPLY45" library="taki-library" deviceset="GND" device=""/>
+<part name="J4" library="taki-library" deviceset="USB-C" device="-CX70M-24P1"/>
+<part name="C28" library="taki-library" deviceset="C-EU" device="C0603" value="0.1uF"/>
+<part name="SUPPLY46" library="taki-library" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11253,6 +11220,10 @@ type RDH, grid 15 mm</description>
 </instance>
 <instance part="+3V4" gate="G$1" x="121.92" y="157.48" smashed="yes">
 <attribute name="VALUE" x="119.38" y="152.4" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="J4" gate="G$1" x="345.44" y="139.7" smashed="yes">
+<attribute name="NAME" x="347.98" y="162.56" size="1.778" layer="95" align="center"/>
+<attribute name="VALUE" x="347.98" y="119.38" size="1.778" layer="96" rot="R180" align="center"/>
 </instance>
 </instances>
 <busses>
@@ -13177,8 +13148,8 @@ type RDH, grid 15 mm</description>
 <instance part="SUPPLY49" gate="GND" x="208.28" y="60.96" smashed="yes">
 <attribute name="VALUE" x="206.375" y="57.785" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V27" gate="G$1" x="208.28" y="78.74" smashed="yes">
-<attribute name="VALUE" x="205.74" y="73.66" size="1.778" layer="96" rot="R90"/>
+<instance part="+3V27" gate="G$1" x="208.28" y="93.98" smashed="yes">
+<attribute name="VALUE" x="205.74" y="88.9" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C24" gate="G$1" x="236.22" y="50.8" smashed="yes">
 <attribute name="NAME" x="237.744" y="51.181" size="1.778" layer="95"/>
@@ -13230,6 +13201,13 @@ type RDH, grid 15 mm</description>
 </instance>
 <instance part="SUPPLY45" gate="GND" x="350.52" y="83.82" smashed="yes">
 <attribute name="VALUE" x="348.615" y="80.645" size="1.778" layer="96"/>
+</instance>
+<instance part="C28" gate="G$1" x="200.66" y="83.82" smashed="yes">
+<attribute name="NAME" x="202.184" y="84.201" size="1.778" layer="95"/>
+<attribute name="VALUE" x="202.184" y="79.121" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY46" gate="GND" x="200.66" y="73.66" smashed="yes">
+<attribute name="VALUE" x="198.755" y="70.485" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -13334,13 +13312,23 @@ type RDH, grid 15 mm</description>
 <junction x="350.52" y="91.44"/>
 <pinref part="SUPPLY45" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="C28" gate="G$1" pin="2"/>
+<pinref part="SUPPLY46" gate="GND" pin="GND"/>
+<wire x1="200.66" y1="78.74" x2="200.66" y2="76.2" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+3V3" class="1">
 <segment>
 <pinref part="+3V27" gate="G$1" pin="+3V3"/>
-<wire x1="208.28" y1="76.2" x2="208.28" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="91.44" x2="208.28" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="U8" gate="G$1" pin="VDD"/>
+<wire x1="208.28" y1="88.9" x2="208.28" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="73.66" x2="210.82" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="C28" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="86.36" x2="200.66" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="88.9" x2="208.28" y2="88.9" width="0.1524" layer="91"/>
+<junction x="208.28" y="88.9"/>
 </segment>
 <segment>
 <pinref part="U20" gate="A" pin="OUT"/>
