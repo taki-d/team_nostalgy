@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.0">
+<eagle version="9.1.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -430,42 +430,21 @@ DIN A3, landscape with location and doc. field</description>
 <sheets>
 <sheet>
 <plain>
-<text x="344.17" y="15.24" size="2.286" layer="94">designed by Kinoshita</text>
-<text x="344.17" y="20.32" size="2.286" layer="94">nixie tubes mount board</text>
 </plain>
 <instances>
-<instance part="N1" gate="G$1" x="76.2" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="57.785" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N2" gate="G$1" x="116.84" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="98.425" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N3" gate="G$1" x="157.48" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="139.065" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N4" gate="G$1" x="198.12" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="179.705" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N5" gate="G$1" x="238.76" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="220.345" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N6" gate="G$1" x="279.4" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="260.985" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N7" gate="G$1" x="320.04" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="301.625" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="N8" gate="G$1" x="360.68" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="342.265" y="116.84" size="1.778" layer="95" rot="R90"/>
-</instance>
+<instance part="N1" gate="G$1" x="76.2" y="119.38" rot="R90"/>
+<instance part="N2" gate="G$1" x="116.84" y="119.38" rot="R90"/>
+<instance part="N3" gate="G$1" x="157.48" y="119.38" rot="R90"/>
+<instance part="N4" gate="G$1" x="198.12" y="119.38" rot="R90"/>
+<instance part="N5" gate="G$1" x="238.76" y="119.38" rot="R90"/>
+<instance part="N6" gate="G$1" x="279.4" y="119.38" rot="R90"/>
+<instance part="N7" gate="G$1" x="320.04" y="119.38" rot="R90"/>
+<instance part="N8" gate="G$1" x="360.68" y="119.38" rot="R90"/>
 <instance part="J4" gate="G$1" x="10.16" y="148.59" smashed="yes" rot="R270">
 <attribute name="VALUE" x="6.985" y="165.1" size="1.778" layer="96" rot="MR180"/>
 <attribute name="NAME" x="9.525" y="108.458" size="1.778" layer="95" rot="MR180"/>
 </instance>
-<instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
-<attribute name="LAST_DATE_TIME" x="344.17" y="10.16" size="2.286" layer="94"/>
-<attribute name="SHEET" x="357.505" y="5.08" size="2.54" layer="94"/>
-</instance>
+<instance part="FRAME1" gate="G$1" x="0" y="0"/>
 </instances>
 <busses>
 </busses>
