@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2019-12-17T12:01:40Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "vfd_drive"
+        },
+        "Owner": "Takahiro Kinoshita <taka410199@gmail.com>",
+        "Size": {
+            "X": 99.957338,
+            "Y": 99.957331
+        }
+    }
+}
