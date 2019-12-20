@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -11605,9 +11605,9 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <attribute name="NAME" x="150.9014" y="201.93" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="155.702" y="201.93" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="J1" gate="G$1" x="17.78" y="241.3" smashed="yes">
-<attribute name="NAME" x="8.636" y="249.428" size="1.778" layer="95"/>
-<attribute name="VALUE" x="8.89" y="226.06" size="1.778" layer="96"/>
+<instance part="J1" gate="G$1" x="15.24" y="238.76" smashed="yes">
+<attribute name="NAME" x="6.096" y="246.888" size="1.778" layer="95"/>
+<attribute name="VALUE" x="6.35" y="223.52" size="1.778" layer="96"/>
 </instance>
 <instance part="DIS1" gate="G$1" x="320.04" y="220.98" smashed="yes">
 <attribute name="NAME" x="363.22" y="234.95" size="1.778" layer="95" ratio="10" rot="R180"/>
@@ -11707,8 +11707,8 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <instance part="SUPPLY6" gate="GND" x="218.44" y="7.62" smashed="yes">
 <attribute name="VALUE" x="216.535" y="4.445" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY7" gate="GND" x="33.02" y="223.52" smashed="yes">
-<attribute name="VALUE" x="31.115" y="220.345" size="1.778" layer="96"/>
+<instance part="SUPPLY7" gate="GND" x="30.48" y="220.98" smashed="yes">
+<attribute name="VALUE" x="28.575" y="217.805" size="1.778" layer="96"/>
 </instance>
 <instance part="J5" gate="G$1" x="236.22" y="166.37" smashed="yes" rot="R270">
 <attribute name="VALUE" x="233.045" y="182.88" size="1.778" layer="96" rot="MR180"/>
@@ -12113,11 +12113,11 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pinref part="J1" gate="G$1" pin="GND"/>
 <pinref part="J1" gate="G$1" pin="SHIELD"/>
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
-<wire x1="33.02" y1="236.22" x2="33.02" y2="231.14" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="231.14" x2="33.02" y2="226.06" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="236.22" x2="33.02" y2="236.22" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="231.14" x2="33.02" y2="231.14" width="0.1524" layer="91"/>
-<junction x="33.02" y="231.14"/>
+<wire x1="30.48" y1="233.68" x2="30.48" y2="228.6" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="228.6" x2="30.48" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="233.68" x2="30.48" y2="233.68" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="228.6" x2="30.48" y2="228.6" width="0.1524" layer="91"/>
+<junction x="30.48" y="228.6"/>
 </segment>
 <segment>
 <pinref part="DIS1" gate="G$1" pin="GND"/>
@@ -13072,8 +13072,8 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <net name="VBUS" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="VBUS"/>
-<wire x1="27.94" y1="246.38" x2="38.1" y2="246.38" width="0.1524" layer="91"/>
-<label x="30.48" y="246.38" size="1.778" layer="95"/>
+<wire x1="25.4" y1="243.84" x2="35.56" y2="243.84" width="0.1524" layer="91"/>
+<label x="27.94" y="243.84" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="43.18" y1="226.06" x2="55.88" y2="226.06" width="0.1524" layer="91"/>
@@ -13085,8 +13085,8 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <net name="D_N" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="D-"/>
-<wire x1="27.94" y1="243.84" x2="38.1" y2="243.84" width="0.1524" layer="91"/>
-<label x="33.02" y="243.84" size="1.778" layer="95"/>
+<wire x1="25.4" y1="241.3" x2="35.56" y2="241.3" width="0.1524" layer="91"/>
+<label x="30.48" y="241.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="D-"/>
@@ -13097,8 +13097,8 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <net name="D_P" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="D+"/>
-<wire x1="27.94" y1="241.3" x2="38.1" y2="241.3" width="0.1524" layer="91"/>
-<label x="33.02" y="241.3" size="1.778" layer="95"/>
+<wire x1="25.4" y1="238.76" x2="35.56" y2="238.76" width="0.1524" layer="91"/>
+<label x="30.48" y="238.76" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="D+"/>

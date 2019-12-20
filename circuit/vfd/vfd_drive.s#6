@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.1">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -3491,6 +3491,27 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <text x="-8.89" y="6.985" size="1.27" layer="25">&gt;NAME</text>
 <text x="-8.89" y="-8.255" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="VSOJ12">
+<smd name="1" x="-1.25" y="-1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="2" x="-0.75" y="-1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="3" x="-0.25" y="-1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="4" x="0.25" y="-1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="5" x="0.75" y="-1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="6" x="1.25" y="-1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="7" x="1.25" y="1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="8" x="0.75" y="1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="9" x="0.25" y="1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="10" x="-0.25" y="1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="11" x="-0.75" y="1.2" dx="0.27" dy="0.8" layer="1"/>
+<smd name="12" x="-1.25" y="1.2" dx="0.27" dy="0.8" layer="1"/>
+<wire x1="-1.8" y1="1.2" x2="-1.8" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="-1.2" x2="1.8" y2="-1.2" width="0.127" layer="21"/>
+<wire x1="1.8" y1="-1.2" x2="1.8" y2="1.2" width="0.127" layer="21"/>
+<wire x1="1.8" y1="1.2" x2="-1.8" y2="1.2" width="0.127" layer="21"/>
+<text x="-3.25" y="2" size="1.27" layer="21">&gt;NAME</text>
+<text x="-3.25" y="-3" size="1.27" layer="21">&gt;VALUE</text>
+<circle x="-1.4" y="-0.5" radius="0.15" width="0" layer="22"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="SO08" urn="urn:adsk.eagle:package:37530/1" locally_modified="yes" type="box">
@@ -4029,6 +4050,26 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pin name="DOUT" x="-5.08" y="-30.48" length="middle"/>
 <text x="5.588" y="0.508" size="2.54" layer="95">&gt;NAME</text>
 <text x="6.604" y="-56.896" size="2.54" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="RX8035LC">
+<wire x1="0" y1="0" x2="0" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="-17.78" x2="22.86" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="22.86" y1="-17.78" x2="22.86" y2="0" width="0.254" layer="94"/>
+<wire x1="22.86" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VOUT" x="-5.08" y="-2.54" length="middle"/>
+<pin name="VDD" x="-5.08" y="-5.08" length="middle"/>
+<pin name="NC" x="-5.08" y="-7.62" length="middle"/>
+<pin name="VBAT" x="-5.08" y="-10.16" length="middle"/>
+<pin name="CLKOUT" x="-5.08" y="-12.7" length="middle"/>
+<pin name="SCL" x="-5.08" y="-15.24" length="middle"/>
+<pin name="EVIN1" x="27.94" y="-2.54" length="middle" rot="R180"/>
+<pin name="RES" x="27.94" y="-5.08" length="middle" rot="R180"/>
+<pin name="INTRA" x="27.94" y="-7.62" length="middle" rot="R180"/>
+<pin name="GND" x="27.94" y="-10.16" length="middle" rot="R180"/>
+<pin name="SDA" x="27.94" y="-12.7" length="middle" rot="R180"/>
+<pin name="INTRB" x="27.94" y="-15.24" length="middle" rot="R180"/>
+<text x="2.54" y="0.762" size="2.1844" layer="95">&gt;NAME</text>
+<text x="2.54" y="-20.32" size="2.1844" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -5887,6 +5928,32 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="RX8035LC" prefix="U">
+<gates>
+<gate name="G$1" symbol="RX8035LC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="VSOJ12">
+<connects>
+<connect gate="G$1" pin="CLKOUT" pad="5"/>
+<connect gate="G$1" pin="EVIN1" pad="12"/>
+<connect gate="G$1" pin="GND" pad="9"/>
+<connect gate="G$1" pin="INTRA" pad="10"/>
+<connect gate="G$1" pin="INTRB" pad="7"/>
+<connect gate="G$1" pin="NC" pad="3"/>
+<connect gate="G$1" pin="RES" pad="11"/>
+<connect gate="G$1" pin="SCL" pad="6"/>
+<connect gate="G$1" pin="SDA" pad="8"/>
+<connect gate="G$1" pin="VBAT" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="2"/>
+<connect gate="G$1" pin="VOUT" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -6053,6 +6120,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="C20" library="taki-library" deviceset="C-EU" device="C0603" value="0.1uF"/>
 <part name="SUPPLY42" library="taki-library" deviceset="GND" device=""/>
 <part name="SUPPLY43" library="taki-library" deviceset="GND" device=""/>
+<part name="U6" library="taki-library" deviceset="RX8035LC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6559,6 +6627,10 @@ GND
 </instance>
 <instance part="SUPPLY43" gate="GND" x="284.48" y="160.02" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="288.163" y="156.845" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="U6" gate="G$1" x="264.16" y="121.92" smashed="yes">
+<attribute name="NAME" x="266.7" y="122.682" size="2.1844" layer="95"/>
+<attribute name="VALUE" x="266.7" y="101.6" size="2.1844" layer="96"/>
 </instance>
 </instances>
 <busses>

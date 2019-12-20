@@ -7762,6 +7762,22 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <text x="-9" y="-12" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-5.08" y="1.27" size="1.27" layer="21">+</text>
 </package>
+<package name="RX8900CE">
+<smd name="3" x="0" y="-1" dx="0.4" dy="0.9" layer="1"/>
+<smd name="2" x="-0.7" y="-1" dx="0.4" dy="0.9" layer="1"/>
+<smd name="1" x="-1.55" y="-1" dx="0.7" dy="0.9" layer="1"/>
+<smd name="4" x="0.7" y="-1" dx="0.4" dy="0.9" layer="1"/>
+<smd name="5" x="1.55" y="-1" dx="0.7" dy="0.9" layer="1"/>
+<smd name="6" x="0" y="1" dx="0.4" dy="0.9" layer="1" rot="R180"/>
+<smd name="7" x="0.7" y="1" dx="0.4" dy="0.9" layer="1" rot="R180"/>
+<smd name="8" x="1.55" y="1" dx="0.7" dy="0.9" layer="1" rot="R180"/>
+<smd name="9" x="-0.7" y="1" dx="0.4" dy="0.9" layer="1" rot="R180"/>
+<smd name="10" x="-1.55" y="1" dx="0.7" dy="0.9" layer="1" rot="R180"/>
+<wire x1="-1.6" y1="1.25" x2="-1.6" y2="-1.25" width="0.127" layer="21"/>
+<wire x1="-1.6" y1="-1.25" x2="1.6" y2="-1.25" width="0.127" layer="21"/>
+<wire x1="1.6" y1="-1.25" x2="1.6" y2="1.25" width="0.127" layer="21"/>
+<wire x1="1.6" y1="1.25" x2="-1.6" y2="1.25" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="R-EU">
@@ -8275,6 +8291,24 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pin name="DOUT" x="-5.08" y="-30.48" length="middle"/>
 <text x="5.588" y="0.508" size="2.54" layer="95">&gt;NAME</text>
 <text x="6.604" y="-56.896" size="2.54" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="RX8900LC">
+<wire x1="0" y1="0" x2="0" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="0" y1="-15.24" x2="22.86" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="22.86" y1="-15.24" x2="22.86" y2="0" width="0.254" layer="94"/>
+<wire x1="22.86" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="FOE" x="-5.08" y="-2.54" length="middle"/>
+<pin name="VDD" x="-5.08" y="-5.08" length="middle"/>
+<pin name="VBAT" x="-5.08" y="-7.62" length="middle"/>
+<pin name="FOUT" x="-5.08" y="-10.16" length="middle"/>
+<pin name="SCL" x="-5.08" y="-12.7" length="middle"/>
+<pin name="INT" x="27.94" y="-2.54" length="middle" rot="R180"/>
+<pin name="GND" x="27.94" y="-5.08" length="middle" rot="R180"/>
+<pin name="T2" x="27.94" y="-7.62" length="middle" rot="R180"/>
+<pin name="SDA" x="27.94" y="-10.16" length="middle" rot="R180"/>
+<pin name="T1" x="27.94" y="-12.7" length="middle" rot="R180"/>
+<text x="2.54" y="0.762" size="2.1844" layer="95">&gt;NAME</text>
+<text x="0" y="-17.78" size="2.1844" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -11357,6 +11391,30 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="RX8900CE">
+<gates>
+<gate name="G$1" symbol="RX8900LC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RX8900CE">
+<connects>
+<connect gate="G$1" pin="FOE" pad="1"/>
+<connect gate="G$1" pin="FOUT" pad="4"/>
+<connect gate="G$1" pin="GND" pad="9"/>
+<connect gate="G$1" pin="INT" pad="10"/>
+<connect gate="G$1" pin="SCL" pad="5"/>
+<connect gate="G$1" pin="SDA" pad="7"/>
+<connect gate="G$1" pin="T1" pad="6"/>
+<connect gate="G$1" pin="T2" pad="8"/>
+<connect gate="G$1" pin="VBAT" pad="3"/>
+<connect gate="G$1" pin="VDD" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -11520,6 +11578,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="C15" library="taki-library" deviceset="CPOL-EU" device="SE-5R5-D155VY"/>
 <part name="SUPPLY30" library="taki-library" deviceset="GND" device=""/>
 <part name="R6" library="taki-library" deviceset="R-EU_" device="R0603" value="10k"/>
+<part name="U$1" library="taki-library" deviceset="RX8900CE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12016,6 +12075,10 @@ GND
 <instance part="R6" gate="G$1" x="198.12" y="243.84" smashed="yes" rot="R180">
 <attribute name="NAME" x="201.93" y="242.3414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="201.93" y="247.142" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="U$1" gate="G$1" x="193.04" y="233.68" smashed="yes">
+<attribute name="NAME" x="195.58" y="234.442" size="2.1844" layer="95"/>
+<attribute name="VALUE" x="193.04" y="215.9" size="2.1844" layer="96"/>
 </instance>
 </instances>
 <busses>

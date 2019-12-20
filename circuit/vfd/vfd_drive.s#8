@@ -4022,10 +4022,10 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pin name="HVOUT18" x="30.48" y="-45.72" length="middle" rot="R180"/>
 <pin name="HVOUT19" x="30.48" y="-48.26" length="middle" rot="R180"/>
 <pin name="HVOUT20" x="30.48" y="-50.8" length="middle" rot="R180"/>
-<pin name="BLANKING" x="-5.08" y="-22.86" length="middle"/>
+<pin name="STROBE" x="-5.08" y="-22.86" length="middle"/>
 <pin name="DIN" x="-5.08" y="-15.24" length="middle"/>
 <pin name="CLK" x="-5.08" y="-17.78" length="middle"/>
-<pin name="STROBE" x="-5.08" y="-25.4" length="middle"/>
+<pin name="BLANKING" x="-5.08" y="-25.4" length="middle"/>
 <pin name="DOUT" x="-5.08" y="-30.48" length="middle"/>
 <text x="5.588" y="0.508" size="2.54" layer="95">&gt;NAME</text>
 <text x="6.604" y="-56.896" size="2.54" layer="96">&gt;VALUE</text>
@@ -5816,7 +5816,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <devices>
 <device name="" package="PLCC-28">
 <connects>
-<connect gate="G$1" pin="BLANKING" pad="16"/>
+<connect gate="G$1" pin="BLANKING" pad="13"/>
 <connect gate="G$1" pin="CLK" pad="15"/>
 <connect gate="G$1" pin="DIN" pad="27"/>
 <connect gate="G$1" pin="DOUT" pad="2"/>
@@ -5841,7 +5841,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="G$1" pin="HVOUT7" pad="20"/>
 <connect gate="G$1" pin="HVOUT8" pad="19"/>
 <connect gate="G$1" pin="HVOUT9" pad="18"/>
-<connect gate="G$1" pin="STROBE" pad="13"/>
+<connect gate="G$1" pin="STROBE" pad="16"/>
 <connect gate="G$1" pin="VDD" pad="28"/>
 <connect gate="G$1" pin="VPP" pad="1"/>
 </connects>
@@ -5852,7 +5852,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </device>
 <device name="SOW" package="SOW28-MICROCHIP">
 <connects>
-<connect gate="G$1" pin="BLANKING" pad="16"/>
+<connect gate="G$1" pin="BLANKING" pad="13"/>
 <connect gate="G$1" pin="CLK" pad="15"/>
 <connect gate="G$1" pin="DIN" pad="27"/>
 <connect gate="G$1" pin="DOUT" pad="2"/>
@@ -5877,7 +5877,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="G$1" pin="HVOUT7" pad="20"/>
 <connect gate="G$1" pin="HVOUT8" pad="19"/>
 <connect gate="G$1" pin="HVOUT9" pad="18"/>
-<connect gate="G$1" pin="STROBE" pad="13"/>
+<connect gate="G$1" pin="STROBE" pad="16"/>
 <connect gate="G$1" pin="VDD" pad="28"/>
 <connect gate="G$1" pin="VPP" pad="1"/>
 </connects>
@@ -6027,6 +6027,8 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="P+13" library="taki-library" deviceset="+5V" device=""/>
 <part name="SUPPLY37" library="taki-library" deviceset="GND" device=""/>
 <part name="U4" library="taki-library" deviceset="HV5812" device="SOW"/>
+<part name="P+14" library="taki-library" deviceset="+5V" device=""/>
+<part name="P+15" library="taki-library" deviceset="+24V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6435,12 +6437,18 @@ GND
 <instance part="P+13" gate="1" x="266.7" y="182.88" smashed="yes">
 <attribute name="VALUE" x="264.922" y="180.34" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY37" gate="GND" x="266.7" y="142.24" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="268.605" y="139.065" size="1.778" layer="96" rot="MR0"/>
+<instance part="SUPPLY37" gate="GND" x="269.24" y="142.24" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="271.145" y="139.065" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="U4" gate="G$1" x="276.86" y="180.34" smashed="yes">
 <attribute name="NAME" x="282.448" y="180.848" size="2.54" layer="95"/>
 <attribute name="VALUE" x="283.464" y="123.444" size="2.54" layer="96"/>
+</instance>
+<instance part="P+14" gate="1" x="254" y="182.88" smashed="yes">
+<attribute name="VALUE" x="252.222" y="177.8" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P+15" gate="1" x="259.08" y="182.88" smashed="yes">
+<attribute name="VALUE" x="256.54" y="177.8" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -6664,8 +6672,8 @@ GND
 <pinref part="SUPPLY36" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<wire x1="271.78" y1="170.18" x2="266.7" y2="170.18" width="0.1524" layer="91"/>
-<wire x1="266.7" y1="170.18" x2="266.7" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="170.18" x2="269.24" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="269.24" y1="170.18" x2="269.24" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="SUPPLY37" gate="GND" pin="GND"/>
 <pinref part="U4" gate="G$1" pin="GND"/>
 </segment>
@@ -6899,6 +6907,12 @@ GND
 <wire x1="266.7" y1="175.26" x2="266.7" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="VDD"/>
 </segment>
+<segment>
+<pinref part="P+14" gate="1" pin="+5V"/>
+<wire x1="254" y1="180.34" x2="254" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="J5" gate="G$1" pin="7"/>
+<wire x1="241.3" y1="162.56" x2="254" y2="162.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+24V" class="0">
 <segment>
@@ -6941,6 +6955,12 @@ GND
 <wire x1="269.24" y1="180.34" x2="269.24" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="269.24" y1="177.8" x2="271.78" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="VPP"/>
+</segment>
+<segment>
+<pinref part="P+15" gate="1" pin="+24V"/>
+<wire x1="259.08" y1="180.34" x2="259.08" y2="172.72" width="0.1524" layer="91"/>
+<pinref part="J5" gate="G$1" pin="3"/>
+<wire x1="259.08" y1="172.72" x2="241.3" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VFD12" class="0">
@@ -7122,16 +7142,28 @@ GND
 <wire x1="322.58" y1="129.54" x2="370.84" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="DATA" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="4"/>
 <wire x1="251.46" y1="170.18" x2="241.3" y2="170.18" width="0.1524" layer="91"/>
+<label x="246.38" y="170.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="271.78" y1="165.1" x2="261.62" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="DIN"/>
+<label x="261.62" y="165.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="CLK" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="5"/>
 <wire x1="241.3" y1="167.64" x2="251.46" y2="167.64" width="0.1524" layer="91"/>
+<label x="246.38" y="167.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="261.62" y1="162.56" x2="271.78" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="CLK"/>
+<label x="261.62" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RTS" class="0">
@@ -7168,10 +7200,16 @@ GND
 <label x="149.86" y="208.28" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="STR" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="6"/>
 <wire x1="251.46" y1="165.1" x2="241.3" y2="165.1" width="0.1524" layer="91"/>
+<label x="246.38" y="165.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="261.62" y1="157.48" x2="271.78" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="STROBE"/>
+<label x="261.62" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VFD_DATA" class="0">
@@ -7198,7 +7236,7 @@ GND
 <pinref part="J3" gate="G$1" pin="5"/>
 </segment>
 </net>
-<net name="VFD_RCK" class="0">
+<net name="VFD_STR" class="0">
 <segment>
 <wire x1="177.8" y1="139.7" x2="162.56" y2="139.7" width="0.1524" layer="91"/>
 <label x="165.1" y="139.7" size="1.778" layer="95"/>
@@ -7387,16 +7425,16 @@ GND
 <label x="132.08" y="111.76" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="N$16" class="1">
+<net name="BL" class="1">
 <segment>
 <pinref part="J5" gate="G$1" pin="2"/>
 <wire x1="251.46" y1="175.26" x2="241.3" y2="175.26" width="0.1524" layer="91"/>
+<label x="248.92" y="175.26" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="N$3" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="7"/>
-<wire x1="241.3" y1="162.56" x2="251.46" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="154.94" x2="261.62" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="BLANKING"/>
+<label x="261.62" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SQW" class="0">

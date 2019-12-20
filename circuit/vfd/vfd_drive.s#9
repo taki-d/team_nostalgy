@@ -4022,10 +4022,10 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <pin name="HVOUT18" x="30.48" y="-45.72" length="middle" rot="R180"/>
 <pin name="HVOUT19" x="30.48" y="-48.26" length="middle" rot="R180"/>
 <pin name="HVOUT20" x="30.48" y="-50.8" length="middle" rot="R180"/>
-<pin name="STR" x="-5.08" y="-22.86" length="middle"/>
+<pin name="BLANKING" x="-5.08" y="-22.86" length="middle"/>
 <pin name="DIN" x="-5.08" y="-15.24" length="middle"/>
 <pin name="CLK" x="-5.08" y="-17.78" length="middle"/>
-<pin name="LE" x="-5.08" y="-25.4" length="middle"/>
+<pin name="STROBE" x="-5.08" y="-25.4" length="middle"/>
 <pin name="DOUT" x="-5.08" y="-30.48" length="middle"/>
 <text x="5.588" y="0.508" size="2.54" layer="95">&gt;NAME</text>
 <text x="6.604" y="-56.896" size="2.54" layer="96">&gt;VALUE</text>
@@ -5816,6 +5816,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <devices>
 <device name="" package="PLCC-28">
 <connects>
+<connect gate="G$1" pin="BLANKING" pad="16"/>
 <connect gate="G$1" pin="CLK" pad="15"/>
 <connect gate="G$1" pin="DIN" pad="27"/>
 <connect gate="G$1" pin="DOUT" pad="2"/>
@@ -5840,8 +5841,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="G$1" pin="HVOUT7" pad="20"/>
 <connect gate="G$1" pin="HVOUT8" pad="19"/>
 <connect gate="G$1" pin="HVOUT9" pad="18"/>
-<connect gate="G$1" pin="LE" pad="13"/>
-<connect gate="G$1" pin="STR" pad="16"/>
+<connect gate="G$1" pin="STROBE" pad="13"/>
 <connect gate="G$1" pin="VDD" pad="28"/>
 <connect gate="G$1" pin="VPP" pad="1"/>
 </connects>
@@ -5852,6 +5852,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 </device>
 <device name="SOW" package="SOW28-MICROCHIP">
 <connects>
+<connect gate="G$1" pin="BLANKING" pad="16"/>
 <connect gate="G$1" pin="CLK" pad="15"/>
 <connect gate="G$1" pin="DIN" pad="27"/>
 <connect gate="G$1" pin="DOUT" pad="2"/>
@@ -5876,8 +5877,7 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <connect gate="G$1" pin="HVOUT7" pad="20"/>
 <connect gate="G$1" pin="HVOUT8" pad="19"/>
 <connect gate="G$1" pin="HVOUT9" pad="18"/>
-<connect gate="G$1" pin="LE" pad="13"/>
-<connect gate="G$1" pin="STR" pad="16"/>
+<connect gate="G$1" pin="STROBE" pad="13"/>
 <connect gate="G$1" pin="VDD" pad="28"/>
 <connect gate="G$1" pin="VPP" pad="1"/>
 </connects>
@@ -6023,10 +6023,10 @@ http://akizukidenshi.com/download/2DC-0005D100.pdf</description>
 <part name="C18" library="taki-library" deviceset="UWT1E221MNL1GS" device=""/>
 <part name="SUPPLY35" library="taki-library" deviceset="GND" device=""/>
 <part name="SUPPLY36" library="taki-library" deviceset="GND" device=""/>
-<part name="U4" library="taki-library" deviceset="HV5812" device="SOW"/>
 <part name="P+12" library="taki-library" deviceset="+24V" device=""/>
 <part name="P+13" library="taki-library" deviceset="+5V" device=""/>
 <part name="SUPPLY37" library="taki-library" deviceset="GND" device=""/>
+<part name="U4" library="taki-library" deviceset="HV5812" device="SOW"/>
 </parts>
 <sheets>
 <sheet>
@@ -6429,10 +6429,6 @@ GND
 <instance part="SUPPLY36" gate="GND" x="243.84" y="157.48" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="245.745" y="154.305" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="U4" gate="G$1" x="276.86" y="180.34" smashed="yes">
-<attribute name="NAME" x="282.448" y="180.848" size="2.54" layer="95"/>
-<attribute name="VALUE" x="283.464" y="123.444" size="2.54" layer="96"/>
-</instance>
 <instance part="P+12" gate="1" x="269.24" y="182.88" smashed="yes">
 <attribute name="VALUE" x="272.542" y="180.086" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -6441,6 +6437,10 @@ GND
 </instance>
 <instance part="SUPPLY37" gate="GND" x="266.7" y="142.24" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="268.605" y="139.065" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="U4" gate="G$1" x="276.86" y="180.34" smashed="yes">
+<attribute name="NAME" x="282.448" y="180.848" size="2.54" layer="95"/>
+<attribute name="VALUE" x="283.464" y="123.444" size="2.54" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -6664,10 +6664,10 @@ GND
 <pinref part="SUPPLY36" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U4" gate="G$1" pin="GND"/>
 <wire x1="271.78" y1="170.18" x2="266.7" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="170.18" x2="266.7" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="SUPPLY37" gate="GND" pin="GND"/>
+<pinref part="U4" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="+3V3" class="1">
@@ -6894,10 +6894,10 @@ GND
 <wire x1="208.28" y1="162.56" x2="220.98" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U4" gate="G$1" pin="VDD"/>
 <wire x1="271.78" y1="175.26" x2="266.7" y2="175.26" width="0.1524" layer="91"/>
 <pinref part="P+13" gate="1" pin="+5V"/>
 <wire x1="266.7" y1="175.26" x2="266.7" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="VDD"/>
 </segment>
 </net>
 <net name="+24V" class="0">
@@ -6939,8 +6939,8 @@ GND
 <segment>
 <pinref part="P+12" gate="1" pin="+24V"/>
 <wire x1="269.24" y1="180.34" x2="269.24" y2="177.8" width="0.1524" layer="91"/>
-<pinref part="U4" gate="G$1" pin="VPP"/>
 <wire x1="269.24" y1="177.8" x2="271.78" y2="177.8" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="VPP"/>
 </segment>
 </net>
 <net name="VFD12" class="0">
